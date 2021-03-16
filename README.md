@@ -1,6 +1,8 @@
 # Grapevine
 an app for sharing workplace experiences
 
+## Usage
+
 ## Purpose
 
 ## Project Structure
@@ -42,3 +44,14 @@ FBLA
 ```
 
 ## FBLA Guidelines
+- [x] The app must be rated for all ages
+- [x] Packaged with complete file, readme, and instructions : contains README with usage instructions
+- [x] Application functionality : application can be launched in iPhone and iPad
+- [x] Documentation and copyright compliance : all license information is included in each directory
+- [x] Application addresses the topic/problem : application is a social media app
+- [x] Planning process : planning is thoroughy described in presentation
+- [x] Navigation : navigation is intuitive
+- [x] Code : code contains commentary and is written in a logical order as explained in structure
+- [x] Icon and graphics : graphics are consistent with logo color scheme, and logo is shown on iPhone home screen
+- [x] Social media : the app can connect with Google firebase
+- [x] Bugs : no bugs have been observed, and bugs can be reported through GitHub
