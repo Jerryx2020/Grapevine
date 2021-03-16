@@ -1,0 +1,6 @@
+framework module Pods_Grapevine_GrapevineUITests {
+  umbrella header "Pods-Grapevine-GrapevineUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
