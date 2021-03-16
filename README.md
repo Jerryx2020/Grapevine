@@ -7,10 +7,12 @@ an app for sharing workplace experiences
 
 ## Project Structure
 ```
-FBLA
+Grapevine
 │   Assets.xcassest //a collection of assets for the project
-│   FBLA.entitlements //a collection of permissions requested by the app
-│   FBLAApp.swift //the residence of the main method, run upon the initialiation of the app
+│   ContentView.swift //
+│   GoogleService-Info.plist //contains properties that are used with firebase
+│   GrapevineApp.swift //the residence of the main method, run upon the initialiation of the app
+│   ITC Avant Garde Gothic Bold.otf //a font used in the app
 │   Info.plist //some basic information about the app
 │
 └───Data
