@@ -4,6 +4,7 @@ an app for sharing workplace experiences
 ## Usage
 
 ## Purpose
+Expanding the range of sharing job experience is our purpose for this app. When people are coming into jobs, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. When a person wants to get a job, due to the extremely high unemployment rate and demand for them, they need to be extremely knowledgeable about that job and what it holds for them, as there isn’t much job-to-job mobility at all. Choosing a job without any experience can be very dangerous, and could put people in worse situations. They need to have a general sense of what they can expect, as oftentimes, people have trouble admitting that there is a problem with something that they have. High schoolers would be very benefitting from the college campus and class experience. There are no detailed tours and guidance is very limited. We need an app that allows information to be shared. We need to make sure that people give real and honest reviews, so people aren’t misled, and they get the experience that they need.
 
 ## Project Structure
 ```
