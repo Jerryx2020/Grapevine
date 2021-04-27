@@ -8,6 +8,7 @@ target 'Grapevine' do
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
+pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly'
 
   # Pods for Grapevine
 
