@@ -65,3 +65,6 @@ url: https://www.firebase.com/terms/terms-of-service.html" As a credits in the c
 - [x] Icon and graphics : graphics are consistent with logo color scheme, and logo is shown on iPhone home screen
 - [x] Social media : the app can connect with Google firebase
 - [x] Bugs : no bugs have been observed, and bugs can be reported through GitHub
+
+### Licensing
+BertQA capabilities (located in the file system as BertQACore) are used under the Apache License Version 2.0. Consistently with the requests of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
