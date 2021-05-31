@@ -57,6 +57,7 @@
 		D899596126656B1B002623E8 /* mobilebert_float_20191023.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D899595E26656B1B002623E8 /* mobilebert_float_20191023.tflite */; };
 		D899596226656B1B002623E8 /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = D899595F26656B1B002623E8 /* vocab.txt */; };
 		D899596526656CB1002623E8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D899596426656CB1002623E8 /* LICENSE */; };
+		D8995968266571A2002623E8 /* QAHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8995967266571A2002623E8 /* QAHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		D899595E26656B1B002623E8 /* mobilebert_float_20191023.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilebert_float_20191023.tflite; sourceTree = "<group>"; };
 		D899595F26656B1B002623E8 /* vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocab.txt; sourceTree = "<group>"; };
 		D899596426656CB1002623E8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D8995967266571A2002623E8 /* QAHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAHandler.swift; sourceTree = "<group>"; };
 		FB92D839057D67E87FB7AC96 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,7 +303,7 @@
 		D822A7A326379ACB0093BF33 /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				D822A7B12637A0950093BF33 /* BertQACore */,
+				D89959662665717F002623E8 /* QA */,
 				D822A7B22637A0950093BF33 /* Constants.swift */,
 				D899596326656B56002623E8 /* Stars */,
 			);
@@ -378,6 +380,15 @@
 				D822A7A926379AFE0093BF33 /* AutoReview.swift */,
 			);
 			path = Stars;
+			sourceTree = "<group>";
+		};
+		D89959662665717F002623E8 /* QA */ = {
+			isa = PBXGroup;
+			children = (
+				D822A7B12637A0950093BF33 /* BertQACore */,
+				D8995967266571A2002623E8 /* QAHandler.swift */,
+			);
+			path = QA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,6 +642,7 @@
 			files = (
 				D822A7A526379ADA0093BF33 /* starrer.mlmodel in Sources */,
 				86814514260055D10030B16B /* NewPostModel.swift in Sources */,
+				D8995968266571A2002623E8 /* QAHandler.swift in Sources */,
 				D822A7C72637A0950093BF33 /* FileLoader.swift in Sources */,
 				86814519260055FF0030B16B /* PostModel.swift in Sources */,
 				D822A7CE2637A0950093BF33 /* DataExtension.swift in Sources */,
