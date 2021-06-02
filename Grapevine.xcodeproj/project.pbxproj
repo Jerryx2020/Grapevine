@@ -58,6 +58,17 @@
 		D899596226656B1B002623E8 /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = D899595F26656B1B002623E8 /* vocab.txt */; };
 		D899596526656CB1002623E8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D899596426656CB1002623E8 /* LICENSE */; };
 		D8995968266571A2002623E8 /* QAHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8995967266571A2002623E8 /* QAHandler.swift */; };
+		D899597326683205002623E8 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D899597226683205002623E8 /* Intents.framework */; };
+		D899597626683205002623E8 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899597526683205002623E8 /* IntentHandler.swift */; };
+		D899597E26683205002623E8 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D899597D26683205002623E8 /* IntentsUI.framework */; };
+		D899598126683205002623E8 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899598026683205002623E8 /* IntentViewController.swift */; };
+		D899598426683205002623E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D899598226683205002623E8 /* MainInterface.storyboard */; };
+		D899598826683205002623E8 /* AskIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D899597C26683205002623E8 /* AskIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D899598B26683205002623E8 /* AskIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D899597126683205002623E8 /* AskIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D89959942668323F002623E8 /* Ask.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D89959932668323F002623E8 /* Ask.intentdefinition */; };
+		D89959BE266837BF002623E8 /* SearchingIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89959BD266837BF002623E8 /* SearchingIntentHandler.swift */; };
+		D89959C126683996002623E8 /* Ask.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D89959932668323F002623E8 /* Ask.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		D89959C226683996002623E8 /* Ask.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D89959932668323F002623E8 /* Ask.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +86,46 @@
 			remoteGlobalIDString = 8681443C25FF2E6C0030B16B;
 			remoteInfo = Grapevine;
 		};
+		D899598626683205002623E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8681443525FF2E6C0030B16B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D899597B26683205002623E8;
+			remoteInfo = AskIntentUI;
+		};
+		D899598926683205002623E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8681443525FF2E6C0030B16B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D899597026683205002623E8;
+			remoteInfo = AskIntent;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D899599226683205002623E8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D899598B26683205002623E8 /* AskIntent.appex in Embed App Extensions */,
+				D899598826683205002623E8 /* AskIntentUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89959B826683660002623E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0708E2ECDCB127D7B93E4B0D /* Pods_Grapevine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +189,18 @@
 		D899595F26656B1B002623E8 /* vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocab.txt; sourceTree = "<group>"; };
 		D899596426656CB1002623E8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D8995967266571A2002623E8 /* QAHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAHandler.swift; sourceTree = "<group>"; };
+		D899596C26683139002623E8 /* Grapevine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grapevine.entitlements; sourceTree = "<group>"; };
+		D899597126683205002623E8 /* AskIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AskIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D899597226683205002623E8 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		D899597526683205002623E8 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		D899597726683205002623E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D899597C26683205002623E8 /* AskIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AskIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D899597D26683205002623E8 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		D899598026683205002623E8 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		D899598326683205002623E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D899598526683205002623E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D89959932668323F002623E8 /* Ask.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Ask.intentdefinition; sourceTree = "<group>"; };
+		D89959BD266837BF002623E8 /* SearchingIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIntentHandler.swift; sourceTree = "<group>"; };
 		FB92D839057D67E87FB7AC96 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +230,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D899596E26683205002623E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D899597326683205002623E8 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D899597926683205002623E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D899597E26683205002623E8 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -177,6 +255,8 @@
 				8681443F25FF2E6C0030B16B /* Grapevine */,
 				8681445125FF2E6D0030B16B /* GrapevineTests */,
 				8681445C25FF2E6D0030B16B /* GrapevineUITests */,
+				D899597426683205002623E8 /* AskIntent */,
+				D899597F26683205002623E8 /* AskIntentUI */,
 				8681443E25FF2E6C0030B16B /* Products */,
 				9CFE2DAEBCDF1E3170400645 /* Pods */,
 				A45B1B9E340CFD7DE6372EF3 /* Frameworks */,
@@ -189,6 +269,8 @@
 				8681443D25FF2E6C0030B16B /* Grapevine.app */,
 				8681444E25FF2E6D0030B16B /* GrapevineTests.xctest */,
 				8681445925FF2E6D0030B16B /* GrapevineUITests.xctest */,
+				D899597126683205002623E8 /* AskIntent.appex */,
+				D899597C26683205002623E8 /* AskIntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +278,8 @@
 		8681443F25FF2E6C0030B16B /* Grapevine */ = {
 			isa = PBXGroup;
 			children = (
+				D899596C26683139002623E8 /* Grapevine.entitlements */,
+				D899596926682FE6002623E8 /* Siri */,
 				D822A7A326379ACB0093BF33 /* AI */,
 				8681448C260021EF0030B16B /* ViewModel */,
 				8681448B260021E00030B16B /* View */,
@@ -296,6 +380,8 @@
 				0708E2ECDCB127D7B93E4B0D /* Pods_Grapevine.framework */,
 				A0517B61D511098C6168BDCD /* Pods_Grapevine_GrapevineUITests.framework */,
 				B0B093E784999894E4193DD1 /* Pods_GrapevineTests.framework */,
+				D899597226683205002623E8 /* Intents.framework */,
+				D899597D26683205002623E8 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -391,6 +477,34 @@
 			path = QA;
 			sourceTree = "<group>";
 		};
+		D899596926682FE6002623E8 /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				D89959932668323F002623E8 /* Ask.intentdefinition */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
+		D899597426683205002623E8 /* AskIntent */ = {
+			isa = PBXGroup;
+			children = (
+				D899597526683205002623E8 /* IntentHandler.swift */,
+				D89959BD266837BF002623E8 /* SearchingIntentHandler.swift */,
+				D899597726683205002623E8 /* Info.plist */,
+			);
+			path = AskIntent;
+			sourceTree = "<group>";
+		};
+		D899597F26683205002623E8 /* AskIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				D899598026683205002623E8 /* IntentViewController.swift */,
+				D899598226683205002623E8 /* MainInterface.storyboard */,
+				D899598526683205002623E8 /* Info.plist */,
+			);
+			path = AskIntentUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,10 +517,14 @@
 				8681443A25FF2E6C0030B16B /* Frameworks */,
 				8681443B25FF2E6C0030B16B /* Resources */,
 				8F6D234929147B004917E062 /* [CP] Embed Pods Frameworks */,
+				D899599226683205002623E8 /* Embed App Extensions */,
+				D89959B826683660002623E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D899598726683205002623E8 /* PBXTargetDependency */,
+				D899598A26683205002623E8 /* PBXTargetDependency */,
 			);
 			name = Grapevine;
 			packageProductDependencies = (
@@ -455,13 +573,47 @@
 			productReference = 8681445925FF2E6D0030B16B /* GrapevineUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D899597026683205002623E8 /* AskIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D899598F26683205002623E8 /* Build configuration list for PBXNativeTarget "AskIntent" */;
+			buildPhases = (
+				D899596D26683205002623E8 /* Sources */,
+				D899596E26683205002623E8 /* Frameworks */,
+				D899596F26683205002623E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AskIntent;
+			productName = AskIntent;
+			productReference = D899597126683205002623E8 /* AskIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D899597B26683205002623E8 /* AskIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D899598C26683205002623E8 /* Build configuration list for PBXNativeTarget "AskIntentUI" */;
+			buildPhases = (
+				D899597826683205002623E8 /* Sources */,
+				D899597926683205002623E8 /* Frameworks */,
+				D899597A26683205002623E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AskIntentUI;
+			productName = AskIntentUI;
+			productReference = D899597C26683205002623E8 /* AskIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8681443525FF2E6C0030B16B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					8681443C25FF2E6C0030B16B = {
@@ -474,6 +626,12 @@
 					8681445825FF2E6D0030B16B = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 8681443C25FF2E6C0030B16B;
+					};
+					D899597026683205002623E8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					D899597B26683205002623E8 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -496,6 +654,8 @@
 				8681443C25FF2E6C0030B16B /* Grapevine */,
 				8681444D25FF2E6D0030B16B /* GrapevineTests */,
 				8681445825FF2E6D0030B16B /* GrapevineUITests */,
+				D899597026683205002623E8 /* AskIntent */,
+				D899597B26683205002623E8 /* AskIntentUI */,
 			);
 		};
 /* End PBXProject section */
@@ -527,6 +687,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D899596F26683205002623E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D899597A26683205002623E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D899598426683205002623E8 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +831,7 @@
 				868144C526003EDC0030B16B /* ImagePicker.swift in Sources */,
 				868144E32600456B0030B16B /* Home.swift in Sources */,
 				8681451E2600562D0030B16B /* FetchUser.swift in Sources */,
+				D89959942668323F002623E8 /* Ask.intentdefinition in Sources */,
 				8681450A260053C40030B16B /* AlertView.swift in Sources */,
 				868144EE260049E40030B16B /* SettingsView.swift in Sources */,
 				868144CA260040DA0030B16B /* UploadImage.swift in Sources */,
@@ -696,6 +872,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D899596D26683205002623E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89959BE266837BF002623E8 /* SearchingIntentHandler.swift in Sources */,
+				D899597626683205002623E8 /* IntentHandler.swift in Sources */,
+				D89959C126683996002623E8 /* Ask.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D899597826683205002623E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89959C226683996002623E8 /* Ask.intentdefinition in Sources */,
+				D899598126683205002623E8 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -709,7 +904,28 @@
 			target = 8681443C25FF2E6C0030B16B /* Grapevine */;
 			targetProxy = 8681445A25FF2E6D0030B16B /* PBXContainerItemProxy */;
 		};
+		D899598726683205002623E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D899597B26683205002623E8 /* AskIntentUI */;
+			targetProxy = D899598626683205002623E8 /* PBXContainerItemProxy */;
+		};
+		D899598A26683205002623E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D899597026683205002623E8 /* AskIntent */;
+			targetProxy = D899598926683205002623E8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D899598226683205002623E8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D899598326683205002623E8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8681446025FF2E6D0030B16B /* Debug */ = {
@@ -832,8 +1048,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB92D839057D67E87FB7AC96 /* Pods-Grapevine.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grapevine/Grapevine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Grapevine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -854,8 +1072,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A2B8D7CB657A7D4ED7C59A7 /* Pods-Grapevine.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grapevine/Grapevine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Grapevine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -956,6 +1176,82 @@
 			};
 			name = Release;
 		};
+		D899598D26683205002623E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AskIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jerry.Grapevine.AskIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D899598E26683205002623E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AskIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jerry.Grapevine.AskIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D899599026683205002623E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AskIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jerry.Grapevine.AskIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D899599126683205002623E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AskIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jerry.Grapevine.AskIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -991,6 +1287,24 @@
 			buildConfigurations = (
 				8681446925FF2E6D0030B16B /* Debug */,
 				8681446A25FF2E6D0030B16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D899598C26683205002623E8 /* Build configuration list for PBXNativeTarget "AskIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D899598D26683205002623E8 /* Debug */,
+				D899598E26683205002623E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D899598F26683205002623E8 /* Build configuration list for PBXNativeTarget "AskIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D899599026683205002623E8 /* Debug */,
+				D899599126683205002623E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
