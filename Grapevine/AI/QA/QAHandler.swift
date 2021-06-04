@@ -8,11 +8,13 @@
 import Foundation
 
 struct QAHandler {
+    @StateObject var postData: PostViewModel = PostViewModel()
+    
     let BertInterface: BertQAHandler = BertQAHandler()
     let posts: [String]
     
     init(posts: [String] = []) {
-        self.posts = posts
+        self.posts = posts.isEmpty() ? self.postData.posts : posts
     }
     
     func ask(_ query: String, _ content: String) -> String { //query is question content is source
