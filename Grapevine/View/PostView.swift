@@ -33,11 +33,8 @@ struct PostView: View {
                     .cornerRadius(15)
             }
             
-            if !search.isEmpty {
+            if !search.isEmpty && search.range(of: "?") != nil {
                 Text(self.QA.find(self.search, self.postData.posts.map({ $0.title })))
-                ForEach(self.searchFunc(self.search)) { item in
-                    
-                }
             }
             
             HStack {
