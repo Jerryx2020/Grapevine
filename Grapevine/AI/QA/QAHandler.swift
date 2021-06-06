@@ -28,30 +28,26 @@ struct QAHandler {
     }
     
     func find(_ query: String, _ sources: [String] = self.posts) -> String {
-        DispatchQueue.global().async {
-            var answers: [String] = []
-            var out: String = ""
-            for i in sources {
-                let n: String = ask(query, i)
-                if !n.isEmpty {
-                    answers.append(n)
-                }
-            }
-            if answers.count == 0 {
-                out = "Sorry, we couldn't find anything."
-            } else if answers.count == 1 {
-                out = answers[0]
-            } else {
-                out = ""
-                out += answers[0]
-                answers.remove(at: 0)
-                for i in answers {
-                    out += "\n"
-                }
-            }
-            DispatchQueue.main.sync {
-                return out
+        var answers: [String] = []
+        var out: String = ""
+        for i in sources {
+            let n: String = ask(query, i)
+            if !n.isEmpty {
+                answers.append(n)
             }
         }
+        if answers.count == 0 {
+            out = "Sorry, we couldn't find anything."
+        } else if answers.count == 1 {
+            out = answers[0]
+        } else {
+            out = ""
+            out += answers[0]
+            answers.remove(at: 0)
+            for i in answers {
+                out += "\n"
+            }
+        }
+        return out
     }
 }

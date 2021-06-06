@@ -10,6 +10,7 @@ import SwiftUI
 struct PostView: View {
     @State var showsSearch: Bool = false
     @State var search: String = ""
+    @State var answer: String = ""
     
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
@@ -34,7 +35,15 @@ struct PostView: View {
             }
             
             if !search.isEmpty && search.range(of: "?") != nil {
-                Text(self.QA.find(self.search, self.postData.posts.map({ $0.title })))
+                Text(self.answer)
+                    .onChange(of: self.search, perform: { value in
+                        DispatchQueue.global().async {
+                            let l: String = self.QA.find(self.search, self.postData.posts.map({ $0.title }))
+                            DispatchQueue.main.sync {
+                                self.answer = l
+                            }
+                        }
+                    })
             }
             
             HStack {
