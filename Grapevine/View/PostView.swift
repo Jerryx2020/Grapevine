@@ -8,11 +8,37 @@
 import SwiftUI
 
 struct PostView: View {
+    @State var showsSearch: Bool = false
+    @State var search: String = ""
+    
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+    
+    let QA: QAHandler
+    
+    init() {
+        self.QA = QAHandler(posts: self.postData.posts.map({ $0.id }))
+    }
+    
     var body: some View {
        
         VStack{
+            
+            HStack {
+                TextField("Search", text: self.$search)
+                    .padding()
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 16))
+                    .foregroundColor(.white)
+                    .background(Color.white.opacity(0.06))
+                    .cornerRadius(15)
+            }
+            
+            if !search.isEmpty {
+                Text(self.QA.find(self.search, self.postData.posts.map({ $0.title })))
+                ForEach(self.searchFunc(self.search)) { item in
+                    
+                }
+            }
             
             HStack {
                 
@@ -53,13 +79,13 @@ struct PostView: View {
                 
                 Spacer(minLength: 0)
             }
-            else{
+            else{ //replace with search returns once implemented to consolidate
                 
                 ScrollView{
                     
                     VStack(spacing: 15){
                         
-                        ForEach(postData.posts){post in
+                        ForEach(self.search.isEmpty ? postData.posts : searchFunc(self.search)) {post in
                             
                             PostRow(post: post,postData: postData)
                         }
@@ -73,5 +99,10 @@ struct PostView: View {
             
             NewPost(updateId : $postData.updateId)
         }
+    }
+    
+    func searchFunc(_ query: String) -> [PostModel] {
+        var l: [PostModel] = self.postData.posts.filter({ $0.title.range(of: query) != nil || $0.id.range(of: query) != nil || $0.time.description.range(of: query) != nil || $0.user.username.range(of: query) != nil })
+        return l
     }
 }
