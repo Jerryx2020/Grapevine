@@ -11,6 +11,7 @@ struct PostView: View {
     @State var showsSearch: Bool = false
     @State var search: String = ""
     @State var answer: String = ""
+    @State var searchLoop: DispatchWorkItem? = nil
     
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
@@ -36,13 +37,20 @@ struct PostView: View {
             
             if !search.isEmpty && search.range(of: "?") != nil {
                 Text(self.answer)
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
+                    .foregroundColor(.white)
                     .onChange(of: self.search, perform: { value in
-                        DispatchQueue.global().async {
-                            let l: String = self.QA.find(self.search, self.postData.posts.map({ $0.title }))
+                        if self.searchLoop != nil {
+                            self.searchLoop!.cancel()
+                            self.searchLoop = nil
+                        }
+                        self.searchLoop = DispatchWorkItem {
+                            let l: String = self.QA.find(value, self.postData.posts.map({ $0.id }))
                             DispatchQueue.main.sync {
                                 self.answer = l
                             }
                         }
+                        DispatchQueue.global().async(execute: self.searchLoop!)
                     })
             }
             
@@ -85,7 +93,7 @@ struct PostView: View {
                 
                 Spacer(minLength: 0)
             }
-            else{ //replace with search returns once implemented to consolidate
+            else {
                 
                 ScrollView{
                     

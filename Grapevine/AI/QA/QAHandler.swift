@@ -11,12 +11,12 @@ struct QAHandler {
     @StateObject var postData: PostViewModel?
     
     let BertInterface: BertQAHandler = BertQAHandler()
-    let posts: [PostModel]
+    let posts: [String]
     
     init(posts: [String] = []) {
-        if posts.isEmpty{
+        if posts.isEmpty {
             self.postData = PostViewModel()
-            self.posts = self.postData!.posts.map({ $0.title })
+            self.posts = self.postData!.posts.map({ $0.id })
         } else {
             self.postData = nil
             self.posts = posts
