@@ -53,6 +53,7 @@
 		D822A7CD2637A0950093BF33 /* UnicodeScalarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7C02637A0950093BF33 /* UnicodeScalarExtension.swift */; };
 		D822A7CE2637A0950093BF33 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7C12637A0950093BF33 /* DataExtension.swift */; };
 		D822A7CF2637A0950093BF33 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7C22637A0950093BF33 /* StringExtension.swift */; };
+		D8345871266FC9550072329D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8345870266FC9550072329D /* InfoView.swift */; };
 		D899596026656B1B002623E8 /* contents_from_squad_dict_format.json in Resources */ = {isa = PBXBuildFile; fileRef = D899595D26656B1B002623E8 /* contents_from_squad_dict_format.json */; };
 		D899596126656B1B002623E8 /* mobilebert_float_20191023.tflite in Resources */ = {isa = PBXBuildFile; fileRef = D899595E26656B1B002623E8 /* mobilebert_float_20191023.tflite */; };
 		D899596226656B1B002623E8 /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = D899595F26656B1B002623E8 /* vocab.txt */; };
@@ -157,6 +158,7 @@
 		D822A7C02637A0950093BF33 /* UnicodeScalarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeScalarExtension.swift; sourceTree = "<group>"; };
 		D822A7C12637A0950093BF33 /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		D822A7C22637A0950093BF33 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D8345870266FC9550072329D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D899595D26656B1B002623E8 /* contents_from_squad_dict_format.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contents_from_squad_dict_format.json; sourceTree = "<group>"; };
 		D899595E26656B1B002623E8 /* mobilebert_float_20191023.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilebert_float_20191023.tflite; sourceTree = "<group>"; };
 		D899595F26656B1B002623E8 /* vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocab.txt; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				868144F2260049FF0030B16B /* CustomTabbar.swift */,
 				86814522260056480030B16B /* PostRow.swift */,
 				86814527260056520030B16B /* NewPost.swift */,
+				D8345870266FC9550072329D /* InfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				D822A7C72637A0950093BF33 /* FileLoader.swift in Sources */,
 				86814519260055FF0030B16B /* PostModel.swift in Sources */,
 				D822A7CE2637A0950093BF33 /* DataExtension.swift in Sources */,
+				D8345871266FC9550072329D /* InfoView.swift in Sources */,
 				86814523260056480030B16B /* PostRow.swift in Sources */,
 				8681450F260055940030B16B /* PostViewModel.swift in Sources */,
 				D822A7AA26379AFE0093BF33 /* AutoReview.swift in Sources */,
