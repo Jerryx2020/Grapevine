@@ -46,6 +46,7 @@ struct InformationContainerView: View {
             InformationDetailView(title: "Score", subTitle: "A detailed score and comparsion of your gradient and the target gradient.", imageName: "checkmark.square")
         }
         .padding(.horizontal)
+        .background(Color("bg"))
     }
 }
 
@@ -61,7 +62,7 @@ struct TitleView: View {
             Text("Welcome to")
                 .customTitleText()
 
-            Text("Gradients Game")
+            Text("Grapevine")
                 .customTitleText()
                 .foregroundColor(.mainColor)
         }
@@ -69,28 +70,39 @@ struct TitleView: View {
 }
 
 struct IntroductionView: View {
+    @Binding var notFirst: Bool
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center) {
+        HStack(alignment: .bottom) {
+            ScrollView {
+                VStack(alignment: .center) {
 
-                Spacer()
+                    Spacer()
 
-                TitleView()
+                    TitleView()
 
-                InformationContainerView()
+                    InformationContainerView()
 
-                Spacer(minLength: 30)
+                    Spacer(minLength: 30)
 
-                Button(action: {
-                    let generator = UINotificationFeedbackGenerator()
-                    generator.notificationOccurred(.success)
-                }) {
-                    Text("Continue")
-                        .customButton()
+                    Button(action: {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        UserDefaults.standard.set(true, forKey: "notfirst")
+                        self.notFirst = true
+                    }) {
+                        Text("Continue")
+                            .customButton()
+                    }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .ignoresSafeArea(edges: .all)
+                .background(Color("bg"))
             }
+            .ignoresSafeArea(edges: .all)
+            .background(Color("bg"))
         }
+        .ignoresSafeArea(edges: .all)
         .background(Color("bg"))
     }
 }

@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct QAHandler {
-    @StateObject var postData: PostViewModel?
     
-    let BertInterface: BertQAHandler = BertQAHandler()
+    let BertInterface: BertQAHandler = try! BertQAHandler()
     let posts: [String]
     
     init(posts: [String] = []) {
         if posts.isEmpty {
-            self.postData = PostViewModel()
-            self.posts = self.postData!.posts.map({ $0.id })
+            //self.postData = PostViewModel()
+            let postD: PostViewModel = PostViewModel()
+            self.posts = postD.posts.map({ $0.id })
         } else {
-            self.postData = nil
+            //self.postData = nil
             self.posts = posts
         }
     }
@@ -27,7 +28,7 @@ struct QAHandler {
         return self.BertInterface.run(query: query, content: content)?.answer.text.value ?? ""
     }
     
-    func find(_ query: String, _ sources: [String] = self.posts) -> String {
+    func find(_ query: String, _ sources: [String]) -> String {
         var answers: [String] = []
         var out: String = ""
         for i in sources {
@@ -45,7 +46,7 @@ struct QAHandler {
             out += answers[0]
             answers.remove(at: 0)
             for i in answers {
-                out += "\n"
+                out += i + "\n"
             }
         }
         return out

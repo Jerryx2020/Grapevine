@@ -19,40 +19,12 @@ struct PostView: View {
     let QA: QAHandler
     
     init() {
-        self.QA = QAHandler(posts: self.postData.posts.map({ $0.id }))
+        self.QA = QAHandler()
     }
     
     var body: some View {
        
         VStack{
-            
-            HStack {
-                TextField("Search", text: self.$search)
-                    .padding()
-                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 16))
-                    .foregroundColor(.white)
-                    .background(Color.white.opacity(0.06))
-                    .cornerRadius(15)
-            }
-            
-            if !search.isEmpty && search.range(of: "?") != nil {
-                Text(self.answer)
-                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
-                    .foregroundColor(.white)
-                    .onChange(of: self.search, perform: { value in
-                        if self.searchLoop != nil {
-                            self.searchLoop!.cancel()
-                            self.searchLoop = nil
-                        }
-                        self.searchLoop = DispatchWorkItem {
-                            let l: String = self.QA.find(value, self.postData.posts.map({ $0.id }))
-                            DispatchQueue.main.sync {
-                                self.answer = l
-                            }
-                        }
-                        DispatchQueue.global().async(execute: self.searchLoop!)
-                    })
-            }
             
             HStack {
                 
@@ -77,7 +49,34 @@ struct PostView: View {
             // Top Shadow Effect...
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
+            HStack {
+                TextField("Search", text: self.$search)
+                    .padding()
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 16))
+                    .foregroundColor(.white)
+                    .background(Color.white.opacity(0.06))
+                    .cornerRadius(15)
+            }
+            .padding()
             
+            if !search.isEmpty && search.range(of: "?") != nil {
+                Text(self.answer)
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
+                    .foregroundColor(.white)
+                    .onChange(of: self.search, perform: { value in
+                        if self.searchLoop != nil {
+                            self.searchLoop!.cancel()
+                            self.searchLoop = nil
+                        }
+                        self.searchLoop = DispatchWorkItem {
+                            let l: String = self.QA.find(value, self.postData.posts.map({ $0.id }))
+                            DispatchQueue.main.sync {
+                                self.answer = l
+                            }
+                        }
+                        DispatchQueue.global().async(execute: self.searchLoop!)
+                    })
+            }
             if postData.posts.isEmpty{
                 
                 Spacer(minLength: 0)
