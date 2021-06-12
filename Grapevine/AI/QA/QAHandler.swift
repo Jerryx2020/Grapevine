@@ -31,7 +31,10 @@ struct QAHandler {
     func find(_ query: String, _ sources: [String]) -> String {
         var answers: [String] = []
         var out: String = ""
+        var den: Int = sources.count
+        var num: Int = 0
         for i in sources {
+            print(num/den, "\(num)/\(den)")
             let n: String = ask(query, i)
             if !n.isEmpty {
                 answers.append(n)

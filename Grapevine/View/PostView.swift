@@ -12,6 +12,7 @@ struct PostView: View {
     @State var search: String = ""
     @State var answer: String = ""
     @State var searchLoop: DispatchWorkItem? = nil
+    @State var isSearching: Bool = false
     
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
@@ -60,7 +61,7 @@ struct PostView: View {
             .padding()
             
             if !search.isEmpty && search.range(of: "?") != nil {
-                Text(self.answer)
+                Text(self.isSearching ? "Searching..." : self.answer)
                     .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
                     .foregroundColor(.white)
                     .onChange(of: self.search, perform: { value in
@@ -68,14 +69,19 @@ struct PostView: View {
                             self.searchLoop!.cancel()
                             self.searchLoop = nil
                         }
+                        self.isSearching = true
                         self.searchLoop = DispatchWorkItem {
                             let l: String = self.QA.find(value, self.postData.posts.map({ $0.id }))
                             DispatchQueue.main.sync {
                                 self.answer = l
+                                self.isSearching = false
                             }
                         }
                         DispatchQueue.global().async(execute: self.searchLoop!)
                     })
+                    .padding()
+                    .background(Color.white.opacity(0.06))
+                    .cornerRadius(15)
             }
             if postData.posts.isEmpty{
                 

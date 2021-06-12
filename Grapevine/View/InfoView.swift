@@ -14,11 +14,19 @@ struct InformationDetailView: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(systemName: imageName)
-                .font(Font.custom("ITC Avant Garde Gothic Bold", size: 20))
-                .foregroundColor(.mainColor)
-                .padding()
-                .accessibility(hidden: true)
+            if imageName != "Posts" {
+                Image(systemName: imageName)
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 20))
+                    .foregroundColor(.mainColor)
+                    .padding()
+                    .accessibility(hidden: true)
+            } else {
+                Image(imageName)
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 20))
+                    .foregroundColor(.mainColor)
+                    .padding()
+                    .accessibility(hidden: true)
+            }
 
             VStack(alignment: .leading) {
                 Text(title)
@@ -39,11 +47,11 @@ struct InformationDetailView: View {
 struct InformationContainerView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            InformationDetailView(title: "Match", subTitle: "Match the gradients by moving the Red, Green and Blue sliders for the left and right colors.", imageName: "slider.horizontal.below.rectangle")
+            InformationDetailView(title: "Post", subTitle: "Share experiences from working with your employer.", imageName: "square.and.pencil")
 
-            InformationDetailView(title: "Precise", subTitle: "More precision with the steppers to get that 100 score.", imageName: "minus.slash.plus")
+            InformationDetailView(title: "Feed", subTitle: "See posts from others to learn about potential employers.", imageName: "Posts")
 
-            InformationDetailView(title: "Score", subTitle: "A detailed score and comparsion of your gradient and the target gradient.", imageName: "checkmark.square")
+            InformationDetailView(title: "Search", subTitle: "Search through all posts with keywords or use intelligent quesiton answering.", imageName: "magnifyingglass")
         }
         .padding(.horizontal)
         .background(Color("bg"))
