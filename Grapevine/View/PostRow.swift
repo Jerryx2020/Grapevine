@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 import Firebase
 
 struct PostRow: View {
-    
+    @Binding var selectedUser: UserModel?
     var post : PostModel
     @ObservedObject var postData : PostViewModel
     let uid = Auth.auth().currentUser!.uid
@@ -30,6 +30,9 @@ struct PostRow: View {
                 Text(post.user.username)
                     .foregroundColor(.white)
                     .fontWeight(.bold)
+                    .onTapGesture {
+                        self.selectedUser = self.post.user
+                    }
                 
                 Spacer(minLength: 0)
                 

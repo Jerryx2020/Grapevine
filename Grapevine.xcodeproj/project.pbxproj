@@ -59,6 +59,7 @@
 		D899596226656B1B002623E8 /* vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = D899595F26656B1B002623E8 /* vocab.txt */; };
 		D899596526656CB1002623E8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D899596426656CB1002623E8 /* LICENSE */; };
 		D8995968266571A2002623E8 /* QAHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8995967266571A2002623E8 /* QAHandler.swift */; };
+		D8D7A43E2675914200E1C969 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D7A43D2675914200E1C969 /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		D899596C26683139002623E8 /* Grapevine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grapevine.entitlements; sourceTree = "<group>"; };
 		D899597226683205002623E8 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		D899597D26683205002623E8 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		D8D7A43D2675914200E1C969 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FB92D839057D67E87FB7AC96 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,6 +293,7 @@
 				86814522260056480030B16B /* PostRow.swift */,
 				86814527260056520030B16B /* NewPost.swift */,
 				D8345870266FC9550072329D /* InfoView.swift */,
+				D8D7A43D2675914200E1C969 /* UserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				86814523260056480030B16B /* PostRow.swift in Sources */,
 				8681450F260055940030B16B /* PostViewModel.swift in Sources */,
 				D822A7AA26379AFE0093BF33 /* AutoReview.swift in Sources */,
+				D8D7A43E2675914200E1C969 /* UserView.swift in Sources */,
 				86814528260056520030B16B /* NewPost.swift in Sources */,
 				868144B3260039880030B16B /* LoginViewModel.swift in Sources */,
 				868144C026003E3D0030B16B /* RegisterViewModel.swift in Sources */,
