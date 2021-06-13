@@ -61,11 +61,11 @@ struct InformationContainerView: View {
 struct TitleView: View {
     var body: some View {
         VStack {
-            //Image("Logo")
-               // .resizable()
-                //.aspectRatio(contentMode: .fit)
-                //.frame(width: 100, height: 100, alignment: .center)
-                //.accessibility(hidden: true)
+            Image("Grad")// this doesn't exist, it just acts as a place holder
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100, alignment: .center)
+                .accessibility(hidden: true)
 
             Text("Welcome to")
                 .customTitleText()

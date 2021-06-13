@@ -71,24 +71,7 @@ struct PostView: View {
                             .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
                             .foregroundColor(.white)
                             .onChange(of: self.search, perform: { value in
-                                print("search changed")
-                                if self.searchLoop != nil {
-                                    self.searchLoop!.cancel()
-                                    self.searchLoop = nil
-                                }
-                                self.isSearching = true
-                                self.searchLoop = DispatchWorkItem {
-                                    let l: String = self.QA.find(value, self.postData.posts.map({ $0.id }))
-                                    print("finsihed answering")
-                                    DispatchQueue.main.sync {
-                                        print("setting answer")
-                                        self.answer = l
-                                        self.isSearching = false
-                                    }
-                                }
-                                print("set dispatch")
-                                DispatchQueue.global().async(execute: self.searchLoop!)
-                                print("dispatched")
+                                self.answer = self.QA.find(value, self.postData.posts.map({ $0.id }))
                             })
                             .padding()
                             .background(Color.white.opacity(0.06))
