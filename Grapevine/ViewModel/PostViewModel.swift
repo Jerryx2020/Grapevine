@@ -14,6 +14,7 @@ class PostViewModel : ObservableObject{
     @Published var noPosts = false
     @Published var newPost = false
     @Published var updateId = ""
+    @Published var likes = 0
     
     
     init() {
@@ -47,12 +48,13 @@ class PostViewModel : ObservableObject{
                     let time = doc.document.data()["time"] as! Timestamp
                     let pic = doc.document.data()["url"] as! String
                     let userRef = doc.document.data()["ref"] as! DocumentReference
+                    let likes = doc.document.data()["likes"] as! Int
                     
                     // getting user Data...
                     
                     fetchUser(uid: userRef.documentID) { (user) in
                         
-                        self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), user: user))
+                        self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), likes: likes, user: user))
                         // Sorting All Model..
                         // you can also doi while reading docs...
                         self.posts.sort { (p1, p2) -> Bool in

@@ -11,6 +11,9 @@ import Firebase
 
 struct PostRow: View {
     @Binding var selectedUser: UserModel?
+    
+    @State var isLiked: Bool = false
+    
     var post : PostModel
     @ObservedObject var postData : PostViewModel
     let uid = Auth.auth().currentUser!.uid
@@ -38,6 +41,19 @@ struct PostRow: View {
                     }
                 
                 Spacer(minLength: 0)
+                Button(action: {
+                    self.isLiked.toggle()
+                    self.postData.togLike(self.isLiked)
+                }) {
+                    HStack {
+                        Image(systemName: self.isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
+                            .padding()
+                            .foregroundColor(Color("Blue"))
+                        Text(self.post.likes.description)
+                            .foregroundColor(Color("Blue"))
+                            .padding()
+                    }
+                }
                 
                 // displaying only posted user...
                 
