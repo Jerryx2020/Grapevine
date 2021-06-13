@@ -25,7 +25,7 @@ struct QAHandler {
     }
     
     func ask(_ query: String, _ content: String) -> String { //query is question content is source
-        return self.BertInterface.run(query: query, content: content)?.answer.text.value ?? ""
+        return content[self.BertInterface.run(query: query, content: content)?.answer.text.range ?? 0..<0]
     }
     
     func find(_ query: String, _ sources: [String]) -> String {

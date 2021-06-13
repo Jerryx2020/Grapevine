@@ -67,7 +67,7 @@ struct PostView: View {
                     .padding()
                     
                     if !search.isEmpty && search.range(of: "?") != nil {
-                        Text(self.QA.find(value, self.postData.posts.map({ $0.id })))
+                        Text(self.QA.find(self.search, self.postData.posts.map({ $0.id })))
                             .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
                             .foregroundColor(.white)
                             .padding()
