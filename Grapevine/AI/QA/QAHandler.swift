@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 
+struct Abs {
+    let lowerBound = "".startIndex
+    let upperBound = "".startIndex
+}
+
 struct QAHandler {
     
     let BertInterface: BertQAHandler = try! BertQAHandler()
@@ -25,7 +30,8 @@ struct QAHandler {
     }
     
     func ask(_ query: String, _ content: String) -> String { //query is question content is source
-        return content[self.BertInterface.run(query: query, content: content)?.answer.text.range ?? 0..<0]
+        let l = self.BertInterface.run(query: query, content: content)?.answer.text.range ?? Abs()
+        return content[l.lowerBound...l.upperBound]
     }
     
     func find(_ query: String, _ sources: [String]) -> String {
