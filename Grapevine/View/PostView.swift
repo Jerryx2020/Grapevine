@@ -29,8 +29,7 @@ struct PostView: View {
         ZStack(alignment: .center) {
             if self.selectedUser != nil {
                 UserView(self.selectedUser!, self.$selectedUser)
-                    .background(Color("bg"))
-                    .cornerRadius(15)
+                    .zIndex(0)
             }
             VStack{
                 
@@ -131,6 +130,7 @@ struct PostView: View {
                 NewPost(updateId : $postData.updateId)
         }
         }
+        .zIndex(2)
     }
     
     func searchFunc(_ query: String) -> [PostModel] {

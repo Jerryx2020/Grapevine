@@ -74,5 +74,7 @@ struct UserView: View {
             }
             Spacer(minLength: 0)
         }
+        .background(Color("bg"))
+        .cornerRadius(15)
     }
 }
