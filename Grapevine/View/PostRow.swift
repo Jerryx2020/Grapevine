@@ -26,6 +26,9 @@ struct PostRow: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        self.selectedUser = self.post.user
+                    }
                 
                 Text(post.user.username)
                     .foregroundColor(.white)

@@ -29,6 +29,8 @@ struct PostView: View {
         ZStack(alignment: .center) {
             if self.selectedUser != nil {
                 UserView(self.selectedUser!, self.$selectedUser)
+                    .background(Color("bg"))
+                    .cornerRadius(15)
             }
             VStack{
                 

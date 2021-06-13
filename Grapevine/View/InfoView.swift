@@ -49,7 +49,7 @@ struct InformationContainerView: View {
         VStack(alignment: .leading) {
             InformationDetailView(title: "Post", subTitle: "Share experiences from working with your employer.", imageName: "square.and.pencil")
 
-            InformationDetailView(title: "Feed", subTitle: "See posts from others to learn about potential employers.", imageName: "Posts")
+            InformationDetailView(title: "Feed", subTitle: "See posts from others to learn about potential employers.", imageName: "bubble.left.and.bubble.right")
 
             InformationDetailView(title: "Search", subTitle: "Search through all posts with keywords or use intelligent quesiton answering.", imageName: "magnifyingglass")
         }
