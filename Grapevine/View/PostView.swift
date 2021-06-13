@@ -130,7 +130,6 @@ struct PostView: View {
                     NewPost(updateId : $postData.updateId)
                 }
             }
-            .zIndex(2)
         }
     }
     
