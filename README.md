@@ -2,13 +2,19 @@
 an app for sharing workplace experiences
 
 ## Usage
-After loading the app for the first time you have two routes: you can either use an existing profile associated with a phone number, or you can use a new phone number in the database. Type into the "1" with the number 1 to signify the United States cell, next enter in your phone number from the database. Pressing verify will lead you to the next scene. The 2nd option would be the enter a phone number that is not associated with a profile. Follow the same steps as the 1st option but enter in the new phone number. This will prompt you to a new scene that says Register, enter in the information text that includes your name, bio and click on the circle with the image to view available profile pictures, click on the profile picture you want to choose it. After choosing you can click Register. The next scene will be identical for both options. (FEED PANEL) Scrolling will allow you to view existing posts in the database. Clicking the button at the top right will allow you to make a post. You can enter text in the empty white box, or select the image button to choose and image. You can do both at the same time. Pressing post will post the image. The three vertical circles will allow you to either edit or delete. Editing is the same process as posting a new text. The setting panel(Settings panel) will allow you to update an image as a profile, update your name, update your bio and logout. The process is the same as before.
+Upon first launch, the user may take two routes: use an existing profile associated with a phone number or use a new phone number in the database. On the login screen, the first entry box accepts a country code, and the second, the remainder of the phone number. Pressing verify performs authentication and unlocks the app. The user may also enter a phone number that is not associated with a profile. This brings the user to the Register page.
+
+The main part of the app is the Feed. Scrolling will allow the user to view existing posts. Clicking the button at the top right will allow the user to post. The user can, then, enter text and select an image to post. After posting, a user may also delete or edit their post by clicking the three dots. Using the settings screen, the user may update their profile image, name, bio, and the user may also logout.
 
 ## Purpose
-Expanding the range of sharing job experience is our purpose for this app. When people are coming into jobs, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. When a person wants to get a job, due to the extremely high unemployment rate and demand for them, they need to be extremely knowledgeable about that job and what it holds for them, as there isn’t much job-to-job mobility at all. Choosing a job without any experience can be very dangerous, and could put people in worse situations. They need to have a general sense of what they can expect, as oftentimes, people have trouble admitting that there is a problem with something that they have. High schoolers would be very benefitting from the college campus and class experience. There are no detailed tours and guidance is very limited. We need an app that allows information to be shared. We need to make sure that people give real and honest reviews, so people aren’t misled, and they get the experience that they need.
+We built Grapevine to make taking a new job more predictable. We try to do so by allowing people to share their experiences from the workplace. When taking a job, one should know what to expect, but, often, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. Grapevine gives people peace of mind by creating a more transparent workplace.
 
 ## Project Structure
-The structure of our Grapevine application in xCode was the following. We created sub-folders for every aspect of code to stay organized. Folders for data retrieval, methods and rules in the form of for example if statements (ViewModel). We created another folder to manage the graphical aspect of the application and assignation of routes (View) and finally we created the (Model) folder that organizated corresponding data with Firebase. Other elements and resources found in our repository includes 3rd party dependencies such as SDWebImage, Pods for Cocoapods, Assets in the form of images, and the GoogleService-Info which was our method of attributing a database with Firebase.
+We designed Grapevine's file structure to be intuitive and elegant. In this design, as one goes deeper into the file structure, files become less abstract.
+
+Like files are grouped together. Folders for data retrieval are located in the ViewModel folder; graphical aspects, View; database managers, Model; and artificial intelligence features, AI.
+
+The app also makes use of 3rd party dependencies such as SDWebImage, Cocoapods, and the GoogleService-Info. These dependencies retrieve web images, manage AI and database libraries, and coordinate with our Firebase database, respectively.
 ```
 Grapevine
 │   Assets.xcassest                                    // This package contains a collection of assets for the project
@@ -99,17 +105,17 @@ Grapevine
 ## FBLA Guidelines
 - [x] The app must be rated for all ages
 - [x] Packaged with complete file, README, and instructions : contains README with usage instructions as well as info page on startup
-- [x] Application Functionality : application can be launched in iPhone and iPad
-- [x] Documentation and Copyright Compliance : all license information is included in each directory
+- [x] Application Functionality : application can be launched on iPhone, and an Android version is included
+- [x] Documentation and Copyright Compliance : all license information is included in the code as well as in README.md
 - [x] Application addresses the topic/problem : application is a social media app
-- [x] Planning Process : planning is thoroughy described in presentation
-- [x] Navigation : navigation is intuitive
-- [x] Code : code contains commentary and is written in a logical order as explained in structure
-- [x] Icon and Graphics : graphics are consistent with logo color scheme, and logo is shown on iPhone home screen
-- [x] Social Media : the app is connected to Google firebase
-- [x] Bugs : no bugs have been observed, and bugs can be reported through GitHub
+- [x] Planning Process : planning is thoroughy described in presentation and user guide
+- [x] Navigation : navigation is intuitive and described in README.md
+- [x] Code : code contains commentary and is arranged logically, as explained in Project Structure
+- [x] Icon and Graphics : graphics are consistent with logo color scheme, and logo is shown on device home screen
+- [x] Social Media : the app is connected to Google Firebase and makes use of a Social Media design
+- [x] Bugs : no bugs have been observed, and future bugs can be reported through GitHub
 
 ## Licensing
-All of the 3rd party resources we used are under perpetual or circumstantial licenses which are all met in our current condition of the application. Any images used in the application are copyright free under the creative commons license and they are not real people. The two inanimate pictures used were taken personally. Symbols are all licensed inside Xcode.
+All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met. Any images used in the application are used under the Creative Commons license and are not of real people. The two landscape pictures used were taken personally and the rights to the images are maintained. System symbols are licensed for free developer use by Apple.
 
-BertQA capabilities (located in the file system as BertQACore) are used under the Apache License Version 2.0. Consistently with the requests of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
+BertQA capabilities (located in the file system as BertQACore) are used under the Apache License Version 2.0. Consistently with the terms of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
