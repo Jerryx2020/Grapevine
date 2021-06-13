@@ -61,7 +61,7 @@ struct InformationContainerView: View {
 struct TitleView: View {
     var body: some View {
         VStack {
-            Image("gradientsIcon")
+            Image("Logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 180, alignment: .center)
