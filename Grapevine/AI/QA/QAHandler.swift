@@ -33,9 +33,11 @@ struct QAHandler {
         var out: String = ""
         var den: Int = sources.count
         var num: Int = 0
+        print("\(num)/\(den)")
+        print(answers)
         for i in sources {
-            print(num/den, "\(num)/\(den)")
-            let n: String = ask(query, i)
+            print(num/den, "\(num)/\(den)", i)
+            let n: String = self.ask(query, i)
             if !n.isEmpty {
                 answers.append(n)
             }
