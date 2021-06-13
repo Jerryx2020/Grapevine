@@ -67,12 +67,9 @@ struct PostView: View {
                     .padding()
                     
                     if !search.isEmpty && search.range(of: "?") != nil {
-                        Text(self.isSearching ? "Searching..." : self.answer)
+                        Text(self.QA.find(value, self.postData.posts.map({ $0.id })))
                             .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
                             .foregroundColor(.white)
-                            .onChange(of: self.search, perform: { value in
-                                self.answer = self.QA.find(value, self.postData.posts.map({ $0.id }))
-                            })
                             .padding()
                             .background(Color.white.opacity(0.06))
                             .cornerRadius(15)
