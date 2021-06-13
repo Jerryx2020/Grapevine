@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct Abs {
-    let lowerBound = "".startIndex
-    let upperBound = "".startIndex
+extension String {
+    subscript (r: Range<Int>) -> String {
+        get {
+            let startIndex = self.startIndex.advancedBy(r.startIndex)
+            let endIndex = startIndex.advancedBy(r.endIndex - r.startIndex)
+
+            return self[Range(start: startIndex, end: endIndex)]
+        }
+    }
 }
 
 struct QAHandler {
@@ -30,8 +36,9 @@ struct QAHandler {
     }
     
     func ask(_ query: String, _ content: String) -> String { //query is question content is source
-        let l = self.BertInterface.run(query: query, content: content)?.answer.text.range ?? Abs()
-        return content[l.lowerBound...l.upperBound]
+        let l: Int = self.BertInterface.run(query: query, content: content)?.answer.text.range.lowerBound.hashValue ?? 0
+        let u: Int = self.BertInterface.run(query: query, content: content)?.answer.text.range.upperBound.hashValue ?? 0
+        return content[u...l]
     }
     
     func find(_ query: String, _ sources: [String]) -> String {
