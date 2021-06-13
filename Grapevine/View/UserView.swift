@@ -26,11 +26,12 @@ struct UserView: View {
                         .font(Font.custom("ITC Avant Garde Gothic Bold", size: 12))
                         .foregroundColor(.white)
                         .padding()
-                        .padding(.top)
-                        .padding(.top)
                         .background(Color.white.opacity(0.06))
                         .cornerRadius(15)
                 })
+                .padding()
+                .padding(.top)
+                .padding(.top)
                 Spacer(minLength: 0)
             }
             HStack{
@@ -75,6 +76,12 @@ struct UserView: View {
                 Text(self.User.bio)
                     .foregroundColor(.white)
             }
+            Text("_______________________________________")
+                .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
+                .foregroundColor(.white)
+                .padding(.top)
+                .padding(.top)
+                .padding(.top)
             Spacer(minLength: 0)
         }
         .background(Color("bg"))

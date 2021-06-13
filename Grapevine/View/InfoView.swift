@@ -64,7 +64,7 @@ struct TitleView: View {
             Image("Logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 180, alignment: .center)
+                .frame(height: 100, width: 100, alignment: .center)
                 .accessibility(hidden: true)
 
             Text("Welcome to")
