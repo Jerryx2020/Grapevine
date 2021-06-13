@@ -116,7 +116,7 @@ struct PostView: View {
                             
                             ForEach(self.search.isEmpty ? postData.posts : searchFunc(self.search)) {post in
                                 
-                                PostRow(post: post, postData: postData, selectedUser: self.$selectedUser)
+                                PostRow(selectedUser: self.$selectedUser, post: post, postData: postData)
                             }
                         }
                         .padding()
