@@ -29,10 +29,6 @@ Grapevine
 └───AI
 │   │   Constants.swift                                // This file contains configurations for the AIs. This file was written by The TensforFlow Authors, and is used under the Apache 2.0 License. For details see the Licensing section of this document.
 │   │
-│   └───Stars
-│   │   AutoReview.swift                               // This file contains the code that interfaces the star assigning AI defined in starrer.mlmodel
-│   │   starrer.mlmodel                                // This file contains the star assigning transformer model
-│   │
 │   └───QA
 │   │   QAHandler.swift                                // This file contains the high-level wrapper of the question answering utilities implemented in the Grapevine search
 │   │
