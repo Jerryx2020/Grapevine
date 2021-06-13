@@ -309,13 +309,13 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
-  - TensorFlowLiteC (0.0.1-nightly.20210611):
-    - TensorFlowLiteC/Core (= 0.0.1-nightly.20210611)
-  - TensorFlowLiteC/Core (0.0.1-nightly.20210611)
-  - TensorFlowLiteSwift (0.0.1-nightly.20210611):
-    - TensorFlowLiteSwift/Core (= 0.0.1-nightly.20210611)
-  - TensorFlowLiteSwift/Core (0.0.1-nightly.20210611):
-    - TensorFlowLiteC (= 0.0.1-nightly.20210611)
+  - TensorFlowLiteC (0.0.1-nightly.20210613):
+    - TensorFlowLiteC/Core (= 0.0.1-nightly.20210613)
+  - TensorFlowLiteC/Core (0.0.1-nightly.20210613)
+  - TensorFlowLiteSwift (0.0.1-nightly.20210613):
+    - TensorFlowLiteSwift/Core (= 0.0.1-nightly.20210613)
+  - TensorFlowLiteSwift/Core (0.0.1-nightly.20210613):
+    - TensorFlowLiteC (= 0.0.1-nightly.20210613)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -361,8 +361,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  TensorFlowLiteC: 892c6b2ab143e9a2c69897beb4453cab8a17c34c
-  TensorFlowLiteSwift: f9ba53d325fafb4b45f279dc807662e8c82cd8cc
+  TensorFlowLiteC: dc424677e7e86e284f5ab0f0f94ac74252e4720b
+  TensorFlowLiteSwift: 36f880a887faf5d0a268d844f6e36cd19e77edc1
 
 PODFILE CHECKSUM: 2c97bf42adcac611fa0d2e0222ec7e544ac80c57
 

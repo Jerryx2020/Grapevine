@@ -65,15 +65,6 @@ struct PostView: View {
                             .cornerRadius(15)
                     }
                     .padding()
-                    
-                    if !search.isEmpty && search.range(of: "?") != nil {
-                        Text(self.QA.find(self.search, self.postData.posts.map({ $0.id })))
-                            .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.white.opacity(0.06))
-                            .cornerRadius(15)
-                    }
                     if postData.posts.isEmpty{
                         
                         Spacer(minLength: 0)
@@ -94,6 +85,15 @@ struct PostView: View {
                         ScrollView{
                             
                             VStack(spacing: 15){
+                                if !search.isEmpty && search.range(of: "?") != nil {
+                                    Text(self.QA.find(self.search, self.postData.posts.map({ $0.title })))
+                                        .lineLimit(nil)
+                                        .font(Font.custom("ITC Avant Garde Gothic Bold", size: 12))
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .background(Color.white.opacity(0.06))
+                                        .cornerRadius(15)
+                                }
                                 
                                 ForEach(self.search.isEmpty ? postData.posts : searchFunc(self.search)) {post in
                                     
@@ -114,7 +114,7 @@ struct PostView: View {
     }
     
     func searchFunc(_ query: String) -> [PostModel] {
-        var l: [PostModel] = self.postData.posts.filter({ $0.title.range(of: query) != nil || $0.id.range(of: query) != nil || $0.time.description.range(of: query) != nil || $0.user.username.range(of: query) != nil })
-        return l
+        let _query: String = query.lowercased()
+        return self.postData.posts.filter({ $0.title.lowercased().range(of: _query) != nil || $0.id.lowercased().range(of: _query) != nil || $0.time.description.lowercased().range(of: _query) != nil || $0.user.username.lowercased().range(of: _query) != nil })
     }
 }
