@@ -84,6 +84,7 @@ Grapevine
 │   │   PostView.swift                                 // This file is responsible for the visual aspect of the feed panel. It shows visually the string "feed" "No Posts !!!" and images like the Grapevine logo and the "square.and.pencil" image on the screen when applicable. 
 │   │   Register.swift                                 // This file is responsible for the visual and functional aspect of the register panel that prompts if you have a unique unregistered phone number in the Firebase database. It allows you to create a unique name and bio and select a unique profile picture.
 │   │   SettingsView.swift                             // This file is responsible for the visual and functional aspect of the settings panel, it allows you to edit the contents of your profile including bio, name, and profile picture. It also includes the feature of logging out.
+│   │   UserView.swift                                 // This file is responsible for the visual and functional aspect of the user dialog when a user is pressed on the feed.
 │   │
 │
 └───ViewModel                                          // All the folders in View wouldn't function without instructions or data in ViewModel, Although some of the comments suggests that files in "View" provide functionality, they are mostly visual files that generate a button that can be funtional under given routes orignating from the ViewModel
