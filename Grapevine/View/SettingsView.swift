@@ -85,15 +85,15 @@ struct SettingsView: View {
                     }
                 }
                 
-                ForEach(socials) { i in
+                ForEach(socials.allCases, id: \.id) { value in
                     HStack(spacing: 15){
                         
-                        Text(i.rawValue + ": " + self.settingsData.userInfo.get(i)? ?? "None")
+                        Text(value.id + ": " + self.settingsData.userInfo.get(value))
                             .foregroundColor(.white)
                         
                         // Edit Button...
                         
-                        Button(action: {settingsData.updateDetails(field: i.rawValue)}) {
+                        Button(action: {settingsData.updateDetails(field: value.id)}) {
                             
                             Image(systemName: "pencil.circle.fill")
                                 .font(.system(size: 24))

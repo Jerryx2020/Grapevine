@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7509468D4D1C30C7E40C112C /* Pods_GrapevineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5A70A054EDAC45CCEF8DCB /* Pods_GrapevineTests.framework */; };
 		8681444125FF2E6C0030B16B /* GrapevineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681444025FF2E6C0030B16B /* GrapevineApp.swift */; };
 		8681444325FF2E6C0030B16B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681444225FF2E6C0030B16B /* ContentView.swift */; };
 		8681444525FF2E6D0030B16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8681444425FF2E6D0030B16B /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		86814523260056480030B16B /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86814522260056480030B16B /* PostRow.swift */; };
 		86814528260056520030B16B /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86814527260056520030B16B /* NewPost.swift */; };
 		868145402600906C0030B16B /* ITC Avant Garde Gothic Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8681453F2600906C0030B16B /* ITC Avant Garde Gothic Bold.otf */; };
+		9400AAC56732D3917B8D6F6C /* Pods_Grapevine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196626F29DF2681796BB66F8 /* Pods_Grapevine.framework */; };
 		D822A7C32637A0950093BF33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7B22637A0950093BF33 /* Constants.swift */; };
 		D822A7C42637A0950093BF33 /* FullTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7B52637A0950093BF33 /* FullTokenizer.swift */; };
 		D822A7C52637A0950093BF33 /* WordpieceTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822A7B62637A0950093BF33 /* WordpieceTokenizer.swift */; };
@@ -55,6 +57,7 @@
 		D899596526656CB1002623E8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D899596426656CB1002623E8 /* LICENSE */; };
 		D8995968266571A2002623E8 /* QAHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8995967266571A2002623E8 /* QAHandler.swift */; };
 		D8D7A43E2675914200E1C969 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D7A43D2675914200E1C969 /* UserView.swift */; };
+		EA79733F9FF27C5A9FD92253 /* Pods_Grapevine_GrapevineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70DD579FC43505BF827165A /* Pods_Grapevine_GrapevineUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0918CCEC75C0C2F46852D8D2 /* Pods-GrapevineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrapevineTests.debug.xcconfig"; path = "Target Support Files/Pods-GrapevineTests/Pods-GrapevineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		16122C312F5E130D688BE16A /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
+		196626F29DF2681796BB66F8 /* Pods_Grapevine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62886E8C4D993BB0156F5FC4 /* Pods-GrapevineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrapevineTests.release.xcconfig"; path = "Target Support Files/Pods-GrapevineTests/Pods-GrapevineTests.release.xcconfig"; sourceTree = "<group>"; };
 		8681443D25FF2E6C0030B16B /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8681444025FF2E6C0030B16B /* GrapevineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineApp.swift; sourceTree = "<group>"; };
 		8681444225FF2E6C0030B16B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +138,8 @@
 		86814522260056480030B16B /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		86814527260056520030B16B /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		8681453F2600906C0030B16B /* ITC Avant Garde Gothic Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Bold.otf"; sourceTree = "<group>"; };
+		91E14C723B0DC3CA3A920399 /* Pods-Grapevine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.release.xcconfig"; path = "Target Support Files/Pods-Grapevine/Pods-Grapevine.release.xcconfig"; sourceTree = "<group>"; };
+		A70DD579FC43505BF827165A /* Pods_Grapevine_GrapevineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine_GrapevineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D822A7B22637A0950093BF33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D822A7B52637A0950093BF33 /* FullTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTokenizer.swift; sourceTree = "<group>"; };
 		D822A7B62637A0950093BF33 /* WordpieceTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordpieceTokenizer.swift; sourceTree = "<group>"; };
@@ -154,6 +163,9 @@
 		D899597226683205002623E8 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		D899597D26683205002623E8 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		D8D7A43D2675914200E1C969 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		E456127BCCCAD074ED3081BD /* Pods-Grapevine-GrapevineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine-GrapevineUITests.debug.xcconfig"; path = "Target Support Files/Pods-Grapevine-GrapevineUITests/Pods-Grapevine-GrapevineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6DC4B273F031C588B77D751 /* Pods-Grapevine-GrapevineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine-GrapevineUITests.release.xcconfig"; path = "Target Support Files/Pods-Grapevine-GrapevineUITests/Pods-Grapevine-GrapevineUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FE5A70A054EDAC45CCEF8DCB /* Pods_GrapevineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrapevineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				868144E9260049AE0030B16B /* BuildFile in Frameworks */,
+				9400AAC56732D3917B8D6F6C /* Pods_Grapevine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7509468D4D1C30C7E40C112C /* Pods_GrapevineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA79733F9FF27C5A9FD92253 /* Pods_Grapevine_GrapevineUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +309,12 @@
 		9CFE2DAEBCDF1E3170400645 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				16122C312F5E130D688BE16A /* Pods-Grapevine.debug.xcconfig */,
+				91E14C723B0DC3CA3A920399 /* Pods-Grapevine.release.xcconfig */,
+				E456127BCCCAD074ED3081BD /* Pods-Grapevine-GrapevineUITests.debug.xcconfig */,
+				E6DC4B273F031C588B77D751 /* Pods-Grapevine-GrapevineUITests.release.xcconfig */,
+				0918CCEC75C0C2F46852D8D2 /* Pods-GrapevineTests.debug.xcconfig */,
+				62886E8C4D993BB0156F5FC4 /* Pods-GrapevineTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -303,6 +324,9 @@
 			children = (
 				D899597226683205002623E8 /* Intents.framework */,
 				D899597D26683205002623E8 /* IntentsUI.framework */,
+				196626F29DF2681796BB66F8 /* Pods_Grapevine.framework */,
+				A70DD579FC43505BF827165A /* Pods_Grapevine_GrapevineUITests.framework */,
+				FE5A70A054EDAC45CCEF8DCB /* Pods_GrapevineTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -395,11 +419,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8681446225FF2E6D0030B16B /* Build configuration list for PBXNativeTarget "Grapevine" */;
 			buildPhases = (
+				D4BDCDF2D192AE3E1611FA6F /* [CP] Check Pods Manifest.lock */,
 				8681443925FF2E6C0030B16B /* Sources */,
 				8681443A25FF2E6C0030B16B /* Frameworks */,
 				8681443B25FF2E6C0030B16B /* Resources */,
 				D899599226683205002623E8 /* Embed App Extensions */,
 				D89959B826683660002623E8 /* Embed Frameworks */,
+				28AD558F9854108FBA2410D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -417,6 +443,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8681446525FF2E6D0030B16B /* Build configuration list for PBXNativeTarget "GrapevineTests" */;
 			buildPhases = (
+				FC465ED2C8C3E5DD76751293 /* [CP] Check Pods Manifest.lock */,
 				8681444A25FF2E6D0030B16B /* Sources */,
 				8681444B25FF2E6D0030B16B /* Frameworks */,
 				8681444C25FF2E6D0030B16B /* Resources */,
@@ -435,9 +462,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8681446825FF2E6D0030B16B /* Build configuration list for PBXNativeTarget "GrapevineUITests" */;
 			buildPhases = (
+				8A19BBA1033783DADA1C33B0 /* [CP] Check Pods Manifest.lock */,
 				8681445525FF2E6D0030B16B /* Sources */,
 				8681445625FF2E6D0030B16B /* Frameworks */,
 				8681445725FF2E6D0030B16B /* Resources */,
+				834C62FAB72C5D7FD1DFAECA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,6 +554,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28AD558F9854108FBA2410D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grapevine/Pods-Grapevine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grapevine/Pods-Grapevine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Grapevine/Pods-Grapevine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		834C62FAB72C5D7FD1DFAECA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grapevine-GrapevineUITests/Pods-Grapevine-GrapevineUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grapevine-GrapevineUITests/Pods-Grapevine-GrapevineUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Grapevine-GrapevineUITests/Pods-Grapevine-GrapevineUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A19BBA1033783DADA1C33B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grapevine-GrapevineUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4BDCDF2D192AE3E1611FA6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grapevine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC465ED2C8C3E5DD76751293 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GrapevineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8681443925FF2E6C0030B16B /* Sources */ = {
@@ -721,6 +853,7 @@
 		};
 		8681446325FF2E6D0030B16B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16122C312F5E130D688BE16A /* Pods-Grapevine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -743,6 +876,7 @@
 		};
 		8681446425FF2E6D0030B16B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E14C723B0DC3CA3A920399 /* Pods-Grapevine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -765,6 +899,7 @@
 		};
 		8681446625FF2E6D0030B16B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0918CCEC75C0C2F46852D8D2 /* Pods-GrapevineTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -786,6 +921,7 @@
 		};
 		8681446725FF2E6D0030B16B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62886E8C4D993BB0156F5FC4 /* Pods-GrapevineTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -807,6 +943,7 @@
 		};
 		8681446925FF2E6D0030B16B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E456127BCCCAD074ED3081BD /* Pods-Grapevine-GrapevineUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -826,6 +963,7 @@
 		};
 		8681446A25FF2E6D0030B16B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6DC4B273F031C588B77D751 /* Pods-Grapevine-GrapevineUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

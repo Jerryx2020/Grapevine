@@ -48,13 +48,13 @@ class PostViewModel : ObservableObject{
                     let time = doc.document.data()["time"] as! Timestamp
                     let pic = doc.document.data()["url"] as! String
                     let userRef = doc.document.data()["ref"] as! DocumentReference
-                    let likes = doc.document.data()["likes"] as! Int
+                    let likes = doc.document.data()["likes"] as? Int
                     
                     // getting user Data...
                     
                     fetchUser(uid: userRef.documentID) { (user) in
                         
-                        self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), likes: likes, user: user))
+                        self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), likes: likes ?? 0, user: user))
                         // Sorting All Model..
                         // you can also doi while reading docs...
                         self.posts.sort { (p1, p2) -> Bool in
@@ -122,9 +122,9 @@ class PostViewModel : ObservableObject{
     
     func togLike(_ like: Bool, id: String) -> Void {
         if like {
-            ref.collection("Posts").document(id).setValue(["likes": doc.document.data()["likes"] as! Int + 1])
+            ref.collection("Posts").document(id).setValue( (ref.collection("Posts").document(id).value(forKey: "likes") as? Int ?? 0) + 1, forKey: "likes")
         } else {
-            ref.collection("Posts").document(id).setValue(["likes": doc.document.data()["likes"] as! Int - 1])
+            ref.collection("Posts").document(id).setValue( (ref.collection("Posts").document(id).value(forKey: "likes") as? Int ?? 0) - 1, forKey: "likes")
         }
     }
 }

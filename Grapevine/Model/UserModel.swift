@@ -12,23 +12,21 @@ struct UserModel {
     var pic : String
     var bio: String
     var uid : String
-    var facebook : String?
-    var twitter : String?
-    var linkedin : String?
-    var instagram : String?
+    var facebook : String? = nil
+    var twitter : String? = nil
+    var linkedin : String? = nil
+    var instagram : String? = nil
     
-    func get(_ item: socials) -> String? {
+    func get(_ item: socials) -> String {
         switch item {
         case .facebook:
-            return self.facebook
+            return self.facebook != nil ? self.facebook! : "None"
         case .instagram:
-            return self.instagram
+            return self.instagram != nil ? self.instagram! : "None"
         case .linkedin:
-            return self.linkedin
+            return self.linkedin != nil ? self.linkedin! : "None"
         case .twitter:
-            return self.twitter
-        default:
-            return nil
+            return self.twitter != nil ? self.twitter! : "None"
         }
     }
 }

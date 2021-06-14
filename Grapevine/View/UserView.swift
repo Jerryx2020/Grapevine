@@ -80,13 +80,13 @@ struct UserView: View {
             }
             .padding()
             
-            ForEach(socials) {i in
-                if let r = self.User.get(i) {
-                    Text(i.rawValue + ": " + r)
+            ForEach(socials.allCases, id: \.id) {value in
+                if let r: String = self.User.get(value) {
+                    Text(value.id + ": " + r)
                         .foregroundColor(.white)
                         .padding()
                         .onTapGesture {
-                            if let link = URL(string: i.link + r) {
+                            if let link = URL(string: value.link + r) {
                                 UIApplication.shared.open(link)
                             }
                         }

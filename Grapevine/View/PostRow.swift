@@ -71,7 +71,7 @@ struct PostRow: View {
                                 Text("Delete")
                             }
                         }
-                        Button(action: {self.share()}) {
+                        Button(action: {self.isSharing = true}) {
                             Text("Share")
                         }
                         
@@ -113,17 +113,31 @@ struct PostRow: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
             }
+
         }
         .padding()
         .background(Color.white.opacity(0.06))
         .cornerRadius(15)
+        .sheet(isPresented: self.$isSharing, content: {
+            ShareSheet(sharing: [self.share()])
+        })
     }
     
-    func share() -> Void {
-        self.isSharing = true
-        let textToSend = self.post.user.username + " said: " + self.post.title
-        let activityViewController = UIActivityViewController(activityItems: [textToSend], applicationActivities: nil)
-        UIViewController.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
-        self.isSharing = false
+    func share() -> String {
+        return self.post.user.username + " said: " + self.post.title
+    }
+}
+
+struct ShareSheet: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIActivityViewController
+
+    var sharing: [Any]
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ShareSheet>) -> UIActivityViewController {
+        UIActivityViewController(activityItems: sharing, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ShareSheet>) {
+
     }
 }

@@ -7,11 +7,21 @@
 
 import SwiftUI
 import Firebase
+import Foundation
 
-enum socials: Indentifiable {
-    case facebook = "facebook", twitter = "twitter", linkedin = "linkedin", instagram = "instagram"
-    var id: RawValue {
-        rawValue
+enum socials: Identifiable, CaseIterable {
+    case facebook, twitter, linkedin, instagram
+    var id: String {
+        switch self {
+        case .facebook:
+            return "facebook"
+        case .instagram:
+            return "instagram"
+        case .linkedin:
+            return "linkedin"
+        case .twitter:
+            return "twitter"
+        }
     }
     
     var link: String {
@@ -24,8 +34,6 @@ enum socials: Indentifiable {
             return "https://www.linkedin.com/in/"
         case .twitter:
             return "https://www.twitter.com/"
-        default:
-            return nil
         }
     }
 }
