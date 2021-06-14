@@ -6,6 +6,7 @@ target 'Grapevine' do
   use_frameworks!
 
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
 pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly'

@@ -28,7 +28,7 @@ class LoginViewModel : ObservableObject{
         isLoading = true
         
         // Remove When Testing In Live
-        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        // Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         
         let phoneNumber = "+" + code + number
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (ID, err) in

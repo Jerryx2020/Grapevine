@@ -13,6 +13,7 @@ struct PostRow: View {
     @Binding var selectedUser: UserModel?
     
     @State var isLiked: Bool = false
+    @State var isSharing: Bool = false
     
     var post : PostModel
     @ObservedObject var postData : PostViewModel
@@ -57,18 +58,21 @@ struct PostRow: View {
                 
                 // displaying only posted user...
                 
-                if post.user.uid == uid{
                     
                     Menu(content: {
-                        
-                        Button(action: {postData.editPost(id: post.id)}) {
+                        if post.user.uid == uid{
+                            Button(action: {postData.editPost(id: post.id)}) {
+                                
+                                Text("Edit")
+                            }
                             
-                            Text("Edit")
+                            Button(action: {postData.deletePost(id: post.id)}) {
+                                
+                                Text("Delete")
+                            }
                         }
-                        
-                        Button(action: {postData.deletePost(id: post.id)}) {
-                            
-                            Text("Delete")
+                        Button(action: {self.share()}) {
+                            Text("Share")
                         }
                         
                     }, label: {
@@ -79,7 +83,6 @@ struct PostRow: View {
                             .frame(width: 18, height: 18)
                             .foregroundColor(.white)
                     })
-                }
             }
             
             if post.pic != ""{
@@ -114,5 +117,13 @@ struct PostRow: View {
         .padding()
         .background(Color.white.opacity(0.06))
         .cornerRadius(15)
+    }
+    
+    func share() -> Void {
+        self.isSharing = true
+        let textToSend = self.post.user.username + " said: " + self.post.title
+        let activityViewController = UIActivityViewController(activityItems: [textToSend], applicationActivities: nil)
+        UIViewController.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        self.isSharing = false
     }
 }

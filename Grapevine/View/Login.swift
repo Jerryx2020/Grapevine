@@ -67,7 +67,7 @@ struct Login: View {
         // Displaying Alert...
         .alert(isPresented: $loginData.error, content: {
             
-            Alert(title: Text("Error"), message: Text(loginData.errorMsg), dismissButton: .destructive(Text("Ok")))
+            Alert(title: Text("Uh Oh!"), message: Text(loginData.errorMsg), dismissButton: .destructive(Text("Ok")))
         })
         .fullScreenCover(isPresented: $loginData.registerUser, content: {
             
