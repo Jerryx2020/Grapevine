@@ -74,6 +74,7 @@ struct SettingsView: View {
                     
                     Text(settingsData.userInfo.bio)
                         .foregroundColor(.white)
+                        .fontWeight(.heavy)
                     
                     // Edit Button...
                     
@@ -84,23 +85,29 @@ struct SettingsView: View {
                             .foregroundColor(.white)
                     }
                 }
+                .padding()
                 
-                ForEach(socials.allCases, id: \.id) { value in
-                    HStack(spacing: 15){
-                        
-                        Text(value.id + ": " + self.settingsData.userInfo.get(value))
-                            .foregroundColor(.white)
-                        
-                        // Edit Button...
-                        
-                        Button(action: {settingsData.updateDetails(field: value.id)}) {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(socials.allCases, id: \.id) { value in
+                        HStack(spacing: 15){
                             
-                            Image(systemName: "pencil.circle.fill")
-                                .font(.system(size: 24))
+                            Text(value.id.capitalized + ": " + self.settingsData.userInfo.get(value))
                                 .foregroundColor(.white)
+                            
+                            // Edit Button...
+                            
+                            Button(action: {
+                                alertView(msg: "Update \(value.id.capitalized)") { (txt) in
+                                    settingsData.updateBio(id: value.id, value: txt)
+                                }
+                            }) {
+                                
+                                Image(systemName: "pencil.circle.fill")
+                                    .font(.system(size: 24))
+                                    .foregroundColor(.white)
+                            }
                         }
                     }
-                    .padding()
                 }
 
                 // LogOut Button...

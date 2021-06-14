@@ -58,39 +58,39 @@ struct QAHandler {
     }
     
     func find(_ query: String, _ sources: [String]) -> String {
-        var answers: [String] = []
-        var out: String = ""
-        let nouns: [String] = self.getNouns(query).map({ String($0) })
-        let den: Int = sources.count
-        var num: Int = 0
-        print("\(num)/\(den)")
-        print(answers)
-        for i in sources.filter({ self.oneIsIn(nouns, $0) }) {
-            print(num/den, "\(num)/\(den)", i)
-            let n: String = self.ask(query, i)
-            if !n.isEmpty {
-                answers.append(n)
-            }
-            num += 1
-        }
-        if answers.count == 0 {
-            out = "Sorry, we couldn't find anything."
-        } else if answers.count == 1 {
-            out = answers[0]
-        } else {
-            out = ""
-            out += answers[0]
-            answers.remove(at: 0)
-            for i in answers {
-                out += i
-                if out.last! != "." {
-                    out += "."
+            var answers: [String] = []
+            var out: String = ""
+            let nouns: [String] = self.getNouns(query).map({ String($0) })
+            let den: Int = sources.count
+            var num: Int = 0
+            print("\(num)/\(den)")
+            print(answers)
+            for i in sources.filter({ self.oneIsIn(nouns, $0) }) {
+                print(num/den, "\(num)/\(den)", i)
+                let n: String = self.ask(query, i)
+                if !n.isEmpty {
+                    answers.append(n)
                 }
-                if out.last! != " " {
-                    out += " "
+                num += 1
+            }
+            if answers.count == 0 {
+                out = "Sorry, we couldn't find anything."
+            } else if answers.count == 1 {
+                out = answers[0]
+            } else {
+                out = ""
+                out += answers[0]
+                answers.remove(at: 0)
+                for i in answers {
+                    out += i
+                    if out.last! != "." {
+                        out += "."
+                    }
+                    if out.last! != " " {
+                        out += " "
+                    }
                 }
             }
-        }
-        return out
+            return out
     }
 }

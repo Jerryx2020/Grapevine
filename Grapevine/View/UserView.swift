@@ -22,7 +22,13 @@ struct UserView: View {
     var body: some View {
         
         VStack{
-            HStack {
+            HStack{
+                
+                Text("User")
+                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
+                    .foregroundColor(.white)
+                
+                Spacer(minLength: 0)
                 Button(action: { self.selectedUser = nil }, label: {
                     Text("Back")
                         .font(Font.custom("ITC Avant Garde Gothic Bold", size: 12))
@@ -31,18 +37,7 @@ struct UserView: View {
                         .background(Color.white.opacity(0.06))
                         .cornerRadius(15)
                 })
-                .padding(.top)
-                .padding(.top)
-                .padding(.top)
-                Spacer(minLength: 0)
-            }
-            HStack{
-                
-                Text("User")
-                    .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
-                    .foregroundColor(.white)
-                
-                Spacer(minLength: 0)
+                .padding()
                 
             }
             .padding()
@@ -77,14 +72,15 @@ struct UserView: View {
                 
                 Text(self.User.bio)
                     .foregroundColor(.white)
+                    .fontWeight(.heavy)
             }
             .padding()
             
             ForEach(socials.allCases, id: \.id) {value in
-                if let r: String = self.User.get(value) {
-                    Text(value.id + ": " + r)
+                let r: String = self.User.get(value)
+                if r != "None" {
+                    Text(value.id.capitalized + ": " + r)
                         .foregroundColor(.white)
-                        .padding()
                         .onTapGesture {
                             if let link = URL(string: value.link + r) {
                                 UIApplication.shared.open(link)

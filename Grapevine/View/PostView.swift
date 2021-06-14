@@ -63,6 +63,17 @@ struct PostView: View {
                             .foregroundColor(.white)
                             .background(Color.white.opacity(0.06))
                             .cornerRadius(15)
+                            .onChange(of: self.search, perform: { value in
+                                self.answer = "Searching..."
+                                if self.search.range(of: "?") != nil {
+                                    DispatchQueue.global().async {
+                                        let l: String = self.QA.find(self.search, self.postData.posts.map({ $0.title }))
+                                        DispatchQueue.main.sync {
+                                            self.answer = l
+                                        }
+                                    }
+                                }
+                            })
                     }
                     .padding()
                     if postData.posts.isEmpty{
@@ -86,7 +97,7 @@ struct PostView: View {
                             
                             VStack(spacing: 15){
                                 if !search.isEmpty && search.range(of: "?") != nil {
-                                    Text(self.QA.find(self.search, self.postData.posts.map({ $0.title })))
+                                    Text(self.answer)
                                         .lineLimit(nil)
                                         .font(Font.custom("ITC Avant Garde Gothic Bold", size: 12))
                                         .foregroundColor(.white)
