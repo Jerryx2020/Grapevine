@@ -119,4 +119,12 @@ class PostViewModel : ObservableObject{
         // Poping New Post Screen
         newPost.toggle()
     }
+    
+    func togLike(_ like: Bool, id: String) -> Void {
+        if like {
+            ref.collection("Posts").document(id).setValue(["likes": doc.document.data()["likes"] as! Int + 1])
+        } else {
+            ref.collection("Posts").document(id).setValue(["likes": doc.document.data()["likes"] as! Int - 1])
+        }
+    }
 }
