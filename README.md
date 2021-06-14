@@ -1,5 +1,5 @@
 # Grapevine
-An app for sharing workplace experiences
+an app for sharing workplace experiences
 
 ## Installation
 When installing on macOS to run in Xcode, one must install all dependencies with Cocoapods.
