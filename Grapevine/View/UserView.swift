@@ -78,6 +78,21 @@ struct UserView: View {
                 Text(self.User.bio)
                     .foregroundColor(.white)
             }
+            .padding()
+            
+            ForEach(socials) {i in
+                if let r = self.User.get(i) {
+                    Text(i.rawValue + ": " + r)
+                        .foregroundColor(.white)
+                        .padding()
+                        .onTapGesture {
+                            if let link = URL(string: i.link + r) {
+                                UIApplication.shared.open(link)
+                            }
+                        }
+                }
+            }
+            
             Text("_______________________________________")
                 .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
                 .foregroundColor(.white)

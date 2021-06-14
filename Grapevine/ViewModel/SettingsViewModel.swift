@@ -8,6 +8,28 @@
 import SwiftUI
 import Firebase
 
+enum socials: Indentifiable {
+    case facebook = "facebook", twitter = "twitter", linkedin = "linkedin", instagram = "instagram"
+    var id: RawValue {
+        rawValue
+    }
+    
+    var link: String {
+        switch self {
+        case .facebook:
+            return "https://www.facebook.com/"
+        case .instagram:
+            return "https://www.instagram.com/"
+        case .linkedin:
+            return "https://www.linkedin.com/in/"
+        case .twitter:
+            return "https://www.twitter.com/"
+        default:
+            return nil
+        }
+    }
+}
+
 class SettingsViewModel : ObservableObject{
     
     @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
@@ -71,7 +93,7 @@ class SettingsViewModel : ObservableObject{
         }
     }
     
-    func updateBio(id: String,value: String){
+    func updateBio(id: String, value: String){
         
         ref.collection("Users").document(uid).updateData([
         
