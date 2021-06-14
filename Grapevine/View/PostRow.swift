@@ -49,9 +49,9 @@ struct PostRow: View {
                     HStack {
                         Image(systemName: self.isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
                             .padding()
-                            .foregroundColor(Color("Blue"))
+                            .foregroundColor(Color("blue"))
                         Text(self.post.likes.description)
-                            .foregroundColor(Color("Blue"))
+                            .foregroundColor(Color("blue"))
                     }
                 }
                 .padding()
