@@ -42,19 +42,6 @@ struct PostRow: View {
                     }
                 
                 Spacer(minLength: 0)
-                Button(action: {
-                    self.isLiked.toggle()
-                    self.postData.togLike(self.isLiked, id: self.post.id)
-                }) {
-                    HStack {
-                        Image(systemName: self.isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
-                            .padding()
-                            .foregroundColor(Color("blue"))
-                        Text(self.post.likes.description)
-                            .foregroundColor(Color("blue"))
-                    }
-                }
-                .padding()
                 
                 // displaying only posted user...
                 
