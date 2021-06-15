@@ -7,10 +7,14 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import MessageUI
 
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var settingsData = SettingsViewModel()
+    @State var bug: Bool = false
+    @State var alert: Bool = false
+    let canSent: Bool = MFMailComposeViewController.canSendMail()
     var body: some View {
         ScrollView {
             VStack{
@@ -102,9 +106,10 @@ struct SettingsView: View {
                                 }
                             }) {
                                 
-                                Image(systemName: "pencil.circle.fill")
+                                Image(value.id)
                                     .font(.system(size: 24))
                                     .foregroundColor(.white)
+                                    .frame(width: 25, height: 25, alignment: .center)
                             }
                         }
                     }
@@ -123,17 +128,56 @@ struct SettingsView: View {
                 })
                 .padding()
                 .padding(.top,10)
+                Button(action: {
+                    if self.canSent {
+                        self.bug = true
+                    } else {
+                        self.alert = true
+                    }
+                }, label: {
+                    Text("Report a Bug")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width - 225)
+                        .background(Color("blue"))
+                        .clipShape(Capsule())
+                })
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: 300)
             }
             .sheet(isPresented: $settingsData.picker) {
              
                 ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
             }
+            .sheet(isPresented: self.$bug) {
+                Email()
+            }
             .onChange(of: settingsData.img_data) { (newData) in
                 // whenever image is selected update image in Firebase...
                 settingsData.updateImage()
             }
+            .alert(isPresented: self.$alert, content: {
+                
+                Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! To report a bug, use a device that has email capabilities."), dismissButton: .destructive(Text("Ok")))
+            })
         }
+    }
+}
+
+struct Email: UIViewControllerRepresentable {
+    
+    typealias UIViewControllerType = MFMailComposeViewController
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Email>) -> MFMailComposeViewController {
+        let compose: MFMailComposeViewController = MFMailComposeViewController()
+        compose.setToRecipients(["000grapevine000@gmail.com"])
+        compose.setSubject("Bug Report")
+        compose.setMessageBody("Dear Grapevine Bug Team,", isHTML: false)
+        return compose
+    }
+
+    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: UIViewControllerRepresentableContext<Email>) {
+
     }
 }
