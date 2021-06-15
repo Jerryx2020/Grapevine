@@ -160,7 +160,7 @@ struct SettingsView: View {
             .alert(isPresented: self.$alert, content: {
                 
                 Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! To report a bug, use a device that has email capabilities. You can, however, use a Google form."), primaryButton: .destructive(Text("Ok")), secondaryButton: .default(Text("Report"), action: {
-                    UIApplication.shared.open(URL(string: "https://www.gmail.com/")!)
+                    UIApplication.shared.open(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfO7lFPs_tHoyn9trXOJLePeH-o1GoVE6VzTE10R2ol9NzxzQ/viewform?usp=sf_link")!)
                 }))
             })
         }
