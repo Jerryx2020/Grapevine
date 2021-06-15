@@ -8,8 +8,9 @@ First, navigate to the location of the project in the file system using `cd`.
 
 Then, if it is not already installed, install Cocoapods with `sudo gem install cocoapods`.
 
-Then, run the following (ommitting `$`):
+Finally, run the following (ommitting `$`):
 ```
+$ rm Podfile.lock
 $ pod deintegrate
 $ pod install
 $ pod update
@@ -114,19 +115,25 @@ Grapevine
 ```
 
 ## FBLA Guidelines
-- [x] The app must be rated for all ages
-- [x] Packaged with complete file, README, and instructions : contains README with usage instructions as well as info page on startup
-- [x] Application Functionality : application can be launched on iPhone, and an Android version is included
-- [x] Documentation and Copyright Compliance : all license information is included in the code as well as in README.md
-- [x] Application addresses the topic/problem : application is a social media app
-- [x] Planning Process : planning is thoroughy described in presentation and user guide
-- [x] Navigation : navigation is intuitive and described in README.md
-- [x] Code : code contains commentary and is arranged logically, as explained in Project Structure
-- [x] Icon and Graphics : graphics are consistent with logo color scheme, and logo is shown on device home screen
-- [x] Social Media : the app is connected to Google Firebase and makes use of a Social Media design
-- [x] Bugs : no bugs have been observed, and future bugs can be reported through GitHub
+- [x] **The app must be rated for all ages**
+- [x] **Packaged with complete file, README, and instructions**: contains README and User Guide with usage instructions as well as info page on startup
+- [x] **Application Functionality**: application can be launched on iPhone, and an Android version is included
+- [x] **Documentation and Copyright Compliance**: license information is included in the code, code structure, and README.md
+- [x] **Application addresses the topic/problem**: application is a Professional Social Media app
+- [x] **Planning Process**: planning is thoroughy described in presentation
+- [x] **Navigation**: navigation is intuitive and described in README.md and the User Guide
+- [x] **Code**: code contains commentary and is arranged logically, as explained in Project Structure
+- [x] **Icon and Graphics**: graphics are consistent with logo color scheme, and logo is shown on device home screen
+- [x] **Social Media**: the app is connected to Google Firebase, makes use of a Social Media design, and integrates with other platforms
+- [x] **Bugs**: no bugs have been observed, and future bugs can be reported through GitHub and email in the app
 
 ## Licensing
-All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met. Any images used in the application are used under the Creative Commons license and are not of real people. The two landscape pictures used were taken personally and the rights to the images are maintained. System symbols are licensed for free developer use by Apple.
+All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
+
+Profile images appearing in the application are used under the Creative Commons license and are not of real people.
+
+The two landscape pictures used were taken personally and the rights to the images are maintained.
+
+System symbols are licensed for free developer use by Apple.
 
 BertQA capabilities (located in the file system as BertQACore) are used under the Apache License Version 2.0. Consistently with the terms of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
