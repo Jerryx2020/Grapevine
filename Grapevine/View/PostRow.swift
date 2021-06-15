@@ -95,7 +95,11 @@ struct PostRow: View {
                 
                 Spacer(minLength: 0)
                 
-                Text(post.time,style: .time)
+                Text(post.time, style: .date)
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                Text(post.time, style: .time)
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
