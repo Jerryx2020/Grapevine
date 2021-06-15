@@ -159,7 +159,7 @@ struct SettingsView: View {
             }
             .alert(isPresented: self.$alert, content: {
                 
-                Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! To report a bug, use a device that has email capabilities. You can, however, use Gmail through the web. Address your email to grapevinefbla@gmail.com."), primaryButton: .destructive(Text("Ok")), secondaryButton: .default(Text("Go To Gmail"), action: {
+                Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! To report a bug, use a device that has email capabilities. You can, however, use a Google form."), primaryButton: .destructive(Text("Ok")), secondaryButton: .default(Text("Report"), action: {
                     UIApplication.shared.open(URL(string: "https://www.gmail.com/")!)
                 }))
             })
