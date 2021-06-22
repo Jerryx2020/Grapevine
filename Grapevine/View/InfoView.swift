@@ -3,14 +3,14 @@
 //  Grapevine
 //
 //  Created by Nathan Bronson on 6/8/21.
-//  Derived from https://betterprogramming.pub/creating-an-apple-like-splash-screen-in-swiftui-fdeb36b47e81
+//
 
 import SwiftUI
 
-struct InformationDetailView: View {
-    var title: String = "title"
-    var subTitle: String = "subTitle"
-    var imageName: String = "car"
+struct InformationDetailView: View { // Defines component of opening view that gives description of the app
+    var title: String = "title"        // -\
+    var subTitle: String = "subTitle"  //   |--- defines default values for each property
+    var imageName: String = "car"      // -/
 
     var body: some View {
         HStack(alignment: .center) {
@@ -26,7 +26,7 @@ struct InformationDetailView: View {
                     .foregroundColor(.mainColor)
                     .padding()
                     .accessibility(hidden: true)
-            }
+            } // Controls from what collection the image is selected
 
             VStack(alignment: .leading) {
                 Text(title)
@@ -38,13 +38,13 @@ struct InformationDetailView: View {
                     .font(Font.custom("ITC Avant Garde Gothic Bold", size: 16))
                     .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
-            }
+            } // Shows description
         }
         .padding(.top)
     }
 }
 
-struct InformationContainerView: View {
+struct InformationContainerView: View { // Wraps up all details of information view
     var body: some View {
         VStack(alignment: .leading) {
             InformationDetailView(title: "Post", subTitle: "Share experiences from working with your employer.", imageName: "square.and.pencil")
@@ -58,7 +58,7 @@ struct InformationContainerView: View {
     }
 }
 
-struct TitleView: View {
+struct TitleView: View { // Creates title portion of introduction screen
     var body: some View {
         VStack {
             Image("Grad")// this doesn't exist, it just acts as a place holder
@@ -77,8 +77,8 @@ struct TitleView: View {
     }
 }
 
-struct IntroductionView: View {
-    @Binding var notFirst: Bool
+struct IntroductionView: View { // Implements all above structures into a single opening view
+    @Binding var notFirst: Bool // Controls whether to show the view; this function is disabled so that the intro view shows every time the app is opened for demonstration purposes, all code for functioning is present, a line in the main view manager must be uncommented (this will be discussed in that file)
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -93,10 +93,10 @@ struct IntroductionView: View {
 
                     Spacer(minLength: 30)
 
-                    Button(action: {
-                        let generator = UINotificationFeedbackGenerator()
+                    Button(action: { // Continues to main portion of the app and ensures that the intro view will not be shown after the first launch
+                        let generator = UINotificationFeedbackGenerator() // Makes the phone vibrate because haptics are fun
                         generator.notificationOccurred(.success)
-                        UserDefaults.standard.set(true, forKey: "notfirst")
+                        UserDefaults.standard.set(true, forKey: "notfirst") // Sets a user default to specify that subsequent runs are not the first
                         self.notFirst = true
                     }) {
                         Text("Continue")
@@ -115,7 +115,7 @@ struct IntroductionView: View {
     }
 }
 
-struct ButtonModifier: ViewModifier {
+struct ButtonModifier: ViewModifier { // Wraps button modifiers for simplicity
     func body(content: Content) -> some View {
         content
             .foregroundColor(.white)
@@ -128,13 +128,13 @@ struct ButtonModifier: ViewModifier {
     }
 }
 
-extension View {
+extension View { // Implements `ButtonModifier` with a call of `.customButton()`
     func customButton() -> ModifiedContent<Self, ButtonModifier> {
         return modifier(ButtonModifier())
     }
 }
 
-extension Text {
+extension Text { // Arranges modifiers that set text to title
     func customTitleText() -> Text {
         self
             .fontWeight(.black)
@@ -142,6 +142,6 @@ extension Text {
     }
 }
 
-extension Color {
+extension Color { // Ads another way to refer to the "blue" color
     static var mainColor = Color("blue")
 }

@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Login: View {
+struct Login: View { // Defines view shown when loggin in
     
-    @StateObject var loginData = LoginViewModel()
+    @StateObject var loginData = LoginViewModel() // Defines object that controls the underlying login functions
     
     var body: some View {
-        VStack{
+        VStack {
             
-            HStack{
+            HStack {
                 
                 Text("Login")
                     .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
@@ -24,7 +24,7 @@ struct Login: View {
             }
             .padding()
             
-            HStack(spacing: 15){
+            HStack(spacing: 15) {
                 
                 TextField("1", text: $loginData.code)
                     .padding()
@@ -56,8 +56,8 @@ struct Login: View {
                         .background(Color("blue"))
                         .clipShape(Capsule())
                 })
-                .disabled(loginData.code == "" || loginData.number == "" ? true : false)
-                .opacity(loginData.code == "" || loginData.number == "" ? 0.5 : 1)
+                .disabled(loginData.code == "" || loginData.number == "" ? true : false) // Ensures that phone number and country code fields contain data
+                .opacity(loginData.code == "" || loginData.number == "" ? 0.5 : 1) // Creates visual effect that echoes the above sentiment
             }
             
             Spacer(minLength: 0)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Logo: View {
+struct Logo: View { // Defines a view that shows a picture
     @Binding var selectedTab : String
     var body: some View {
         

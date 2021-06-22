@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserModel {
+struct UserModel { // Defines basic properties of a user
     var username : String
     var pic : String
     var bio: String
@@ -17,7 +17,7 @@ struct UserModel {
     var linkedin : String? = nil
     var instagram : String? = nil
     
-    func get(_ item: socials) -> String {
+    func get(_ item: socials) -> String { // Returns social media data of the user based on an input member of the `socials` enum
         switch item {
         case .facebook:
             return self.facebook != nil ? self.facebook! : "None"

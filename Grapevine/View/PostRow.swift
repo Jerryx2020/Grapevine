@@ -9,21 +9,21 @@ import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
 
-struct PostRow: View {
-    @Binding var selectedUser: UserModel?
+struct PostRow: View { // Creates visual representation of a post
+    @Binding var selectedUser: UserModel? // Allows a click on the user handle to cause the user's profile to be shown
     
     @State var isLiked: Bool = false
     @State var isSharing: Bool = false
     
-    var post : PostModel
+    var post : PostModel // Post to be visualized
     @ObservedObject var postData : PostViewModel
-    let uid = Auth.auth().currentUser!.uid
+    let uid = Auth.auth().currentUser!.uid // Contains uid of current user to determine whether the post belongs to the user who should be able to edit or delete the post
     
     var body: some View {
         
-        VStack(spacing: 15){
+        VStack(spacing: 15) {
             
-            HStack(spacing: 10){
+            HStack(spacing: 10) {
                 
                 WebImage(url: URL(string: post.user.pic)!)
                     .resizable()
@@ -43,11 +43,9 @@ struct PostRow: View {
                 
                 Spacer(minLength: 0)
                 
-                // displaying only posted user...
-                
                     
                     Menu(content: {
-                        if post.user.uid == uid{
+                        if post.user.uid == uid {
                             Button(action: {postData.editPost(id: post.id)}) {
                                 
                                 Text("Edit")
@@ -57,7 +55,7 @@ struct PostRow: View {
                                 
                                 Text("Delete")
                             }
-                        }
+                        } // Shows only for user that owns the post
                         Button(action: {self.isSharing = true}) {
                             Text("Share")
                         }
@@ -72,7 +70,7 @@ struct PostRow: View {
                     })
             }
             
-            if post.pic != ""{
+            if post.pic != "" {
                 
                 WebImage(url: URL(string: post.pic)!)
                     .resizable()
@@ -81,7 +79,7 @@ struct PostRow: View {
                     .cornerRadius(15)
             }
             
-            HStack{
+            HStack {
                 
                 Text(post.title)
                     .fontWeight(.bold)
@@ -89,9 +87,9 @@ struct PostRow: View {
                 
                 Spacer(minLength: 0)
             }
-            .padding(.top,5)
+            .padding(.top, 5)
             
-            HStack{
+            HStack {
                 
                 Spacer(minLength: 0)
                 
@@ -111,15 +109,15 @@ struct PostRow: View {
         .cornerRadius(15)
         .sheet(isPresented: self.$isSharing, content: {
             ShareSheet(sharing: [self.share()])
-        })
+        }) // Shows ShareSheet when the user selects shar for the post
     }
     
-    func share() -> String {
+    func share() -> String { // Creates textual representation of the post to be shared
         return self.post.user.username + " said: " + self.post.title
     }
 }
 
-struct ShareSheet: UIViewControllerRepresentable {
+struct ShareSheet: UIViewControllerRepresentable { // Wraps system sharing interface
     typealias UIViewControllerType = UIActivityViewController
 
     var sharing: [Any]

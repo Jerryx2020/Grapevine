@@ -9,9 +9,9 @@ import SwiftUI
 import Firebase
 import Foundation
 
-enum socials: Identifiable, CaseIterable {
+enum socials: Identifiable, CaseIterable { // Defines all social media platforms supported in Grapevine
     case facebook, twitter, linkedin, instagram
-    var id: String {
+    var id: String { // Returns String representation of the value
         switch self {
         case .facebook:
             return "facebook"
@@ -24,7 +24,7 @@ enum socials: Identifiable, CaseIterable {
         }
     }
     
-    var link: String {
+    var link: String { // Returns the URL prefix for a user's page
         switch self {
         case .facebook:
             return "https://www.facebook.com/"
@@ -38,7 +38,7 @@ enum socials: Identifiable, CaseIterable {
     }
 }
 
-class SettingsViewModel : ObservableObject{
+class SettingsViewModel : ObservableObject { // Defines all underlying functionality of the `SettingsView`
     
     @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
     @AppStorage("current_status") var status = false
@@ -53,7 +53,7 @@ class SettingsViewModel : ObservableObject{
     let ref = Firestore.firestore()
     let uid = Auth.auth().currentUser!.uid
     
-    init() {
+    init() { // Intializes by fetching user
         
         fetchUser(uid: uid) { (user) in
             self.userInfo = user
@@ -61,7 +61,7 @@ class SettingsViewModel : ObservableObject{
     }
     
     
-    func logOut(){
+    func logOut() {
         
         // logging out..
         
@@ -69,7 +69,7 @@ class SettingsViewModel : ObservableObject{
         status = false
     }
     
-    func updateImage(){
+    func updateImage() {
         
         isLoading = true
         
@@ -90,25 +90,25 @@ class SettingsViewModel : ObservableObject{
         }
     }
     
-    func updateDetails(field : String){
+    func updateDetails(field : String) { // Provides interface to update a base detail of a user
         
         alertView(msg: "Update \(field)") { (txt) in
             
-            if txt != ""{
+            if txt != "" {
                 
                 self.updateBio(id: field == "Name" ? "username" : "bio", value: txt)
             }
         }
     }
     
-    func updateBio(id: String, value: String){
+    func updateBio(id: String, value: String) { // Provides interface to update an ephemeral detail
         
         ref.collection("Users").document(uid).updateData([
         
             id: value,
         ]) { (err) in
             
-            if err != nil{return}
+            if err != nil {return}
             
             // refreshing View...
             

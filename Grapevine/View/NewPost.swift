@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewPost: View {
+struct NewPost: View { // Defines the view that appears when creating a new post
     @StateObject var newPostData = NewPostModel()
     @Environment(\.presentationMode) var present
     @Binding var updateId : String
@@ -15,7 +15,7 @@ struct NewPost: View {
         
         VStack{
             
-            HStack(spacing: 15){
+            HStack(spacing: 15) {
                 
                 Button(action: {
                     self.updateId = ""
@@ -30,9 +30,9 @@ struct NewPost: View {
                 
                 Spacer(minLength: 0)
                 
-                if updateId == ""{
+                if updateId == "" {
                     
-                    // Only FOr New Posts....
+                    // Only For New Posts....
                     Button(action: {newPostData.picker.toggle()}) {
                         
                         Image(systemName: "photo.fill")
@@ -51,8 +51,8 @@ struct NewPost: View {
                         .background(Color("blue"))
                         .clipShape(Capsule())
                 }
-                .disabled(newPostData.postTxt == "" ? true : false)
-                .opacity(newPostData.postTxt == "" ? 0.5 : 1)
+                .disabled(newPostData.postTxt == "" ? true : false) // Ensures that the post contains data
+                .opacity(newPostData.postTxt == "" ? 0.5 : 1) // Creates visual effect that echoes the above sentiment
             }
             .padding()
             .opacity(newPostData.isPosting ? 0.5 : 1)
@@ -66,7 +66,7 @@ struct NewPost: View {
             
             // Dispalying Image if its selected...
             
-            if newPostData.img_Data.count != 0{
+            if newPostData.img_Data.count != 0 {
                 
                 ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                     

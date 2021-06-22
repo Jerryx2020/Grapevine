@@ -11,21 +11,19 @@ import SwiftUI
 
 struct QAHandler {
     
-    let BertInterface: BertQAHandler = try! BertQAHandler()
-    let posts: [String]
+    let BertInterface: BertQAHandler = try! BertQAHandler() // Defines the BertQAHandler that will be further abstracted
+    let posts: [String] // Defines container for default posts
     
-    init(posts: [String] = []) {
+    init(posts: [String] = []) { // Initializes the QAHandler
         if posts.isEmpty {
-            //self.postData = PostViewModel()
             let postD: PostViewModel = PostViewModel()
             self.posts = postD.posts.map({ $0.title })
         } else {
-            //self.postData = nil
             self.posts = posts
-        }
+        } // Initializes posts conditionally
     }
     
-    func getNouns(_ text: String) -> [String] {
+    func getNouns(_ text: String) -> [String] { // Utility for finding all nouns in a string; used to find keywords in query and content to prune the search space
         var nouns: [String] = []
         let tagger = NSLinguisticTagger(tagSchemes: [.lexicalClass], options: 0)
         tagger.string = text
@@ -36,14 +34,13 @@ struct QAHandler {
                 let word = (text as NSString).substring(with: tokenRange)
                 if tag == NSLinguisticTag.noun {
                     nouns.append(word)
-                    print(word)
                 }
             }
         }
         return nouns
     }
     
-    func oneIsIn(_ li: [String], _ full: String) -> Bool {
+    func oneIsIn(_ li: [String], _ full: String) -> Bool { // Utility for finding whether one if a list (li) of strings are in a passage (full)
         for i in li {
             if full.lowercased().range(of: i.lowercased() + " ") != nil {
                 return true
@@ -52,24 +49,24 @@ struct QAHandler {
         return false
     }
     
-    func ask(_ query: String, _ content: String) -> String { //query is question content is source
+    func ask(_ query: String, _ content: String) -> String { // Abstracts the BertQAHandler run function; query is question content is source
         let q = self.BertInterface.run(query: query, content: content)?.answer.text.value ?? ""
         return q
     }
     
-    func find(_ query: String, _ sources: [String]) -> String {
+    func find(_ query: String, _ sources: [String]) -> String { // Wraps the ask function into a top level API that searches several sources for an answer after filtering by whether they share nouns; all prints are used as logging when debugging
             var answers: [String] = []
             var out: String = ""
-            let nouns: [String] = self.getNouns(query).map({ String($0) })
+            let nouns: [String] = self.getNouns(query).map({ String($0) }) // Analyzes question
             let den: Int = sources.count
             var num: Int = 0
             print("\(num)/\(den)")
             print(answers)
-            for i in sources.filter({ self.oneIsIn(nouns, $0) }) {
+            for i in sources.filter({ self.oneIsIn(nouns, $0) }) { // Finds relevant sources
                 print(num/den, "\(num)/\(den)", i)
-                let n: String = self.ask(query, i)
+                let n: String = self.ask(query, i) // Runs inference on relevant sources
                 if !n.isEmpty {
-                    answers.append(n)
+                    answers.append(n) // Stores answer
                 }
                 num += 1
             }
@@ -90,7 +87,7 @@ struct QAHandler {
                         out += " "
                     }
                 }
-            }
+            } // Creates human readable answer
             return out
     }
 }

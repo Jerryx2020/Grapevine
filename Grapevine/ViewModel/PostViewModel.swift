@@ -8,30 +8,30 @@
 import SwiftUI
 import Firebase
 
-class PostViewModel : ObservableObject{
+class PostViewModel : ObservableObject { // Defines underlying functionality of the `PostView`
     
-    @Published var posts : [PostModel] = []
+    @Published var posts : [PostModel] = [] // Contains all posts
     @Published var noPosts = false
     @Published var newPost = false
     @Published var updateId = ""
     @Published var likes = 0
     
     
-    init() {
+    init() { // Initializes by fetching all posts
         
         getAllPosts()
     }
     
-    func getAllPosts(){
+    func getAllPosts() {
         
         ref.collection("Posts").addSnapshotListener { (snap, err) in
-            guard let docs = snap else{
+            guard let docs = snap else {
                 self.noPosts = true
                 return
                 
             }
             
-            if docs.documentChanges.isEmpty{
+            if docs.documentChanges.isEmpty {
                 
                 self.noPosts = true
                 return
@@ -55,7 +55,6 @@ class PostViewModel : ObservableObject{
                         print(userRef.documentID)
                         self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), likes: 0, user: user))
                         // Sorting All Model..
-                        // you can also doi while reading docs...
                         self.posts.sort { (p1, p2) -> Bool in
                             return p1.time > p2.time
                         }
@@ -64,7 +63,7 @@ class PostViewModel : ObservableObject{
                 
                 // removing post when deleted...
                 
-                if doc.type == .removed{
+                if doc.type == .removed {
                     
                     let id = doc.document.documentID
                     
@@ -73,7 +72,7 @@ class PostViewModel : ObservableObject{
                     }
                 }
                 
-                if doc.type == .modified{
+                if doc.type == .modified {
                     
                     // firebase is firing modifed when a new doc writed
                     // I dont know Why may be its bug...

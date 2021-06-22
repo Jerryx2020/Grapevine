@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-class RegisterViewModel : ObservableObject{
+class RegisterViewModel : ObservableObject { // Defines all underlying functionality necessary for registering a user
     
     @Published var name = ""
     @Published var bio = ""
@@ -20,7 +20,7 @@ class RegisterViewModel : ObservableObject{
     @Published var isLoading = false
     @AppStorage("current_status") var status = false
     
-    func register(){
+    func register() { // Adds all data to Firestore
         
         isLoading = true
         // setting User Data To Firestore....

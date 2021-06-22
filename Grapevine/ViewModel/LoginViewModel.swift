@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-class LoginViewModel : ObservableObject{
+class LoginViewModel : ObservableObject { // Defines underlying functionality of login page
     
     @Published var code = ""
     @Published var number = ""
@@ -23,17 +23,17 @@ class LoginViewModel : ObservableObject{
     // Loading when Searches for user...
     @Published var isLoading = false
     
-    func verifyUser(){
+    func verifyUser() {
         
         isLoading = true
         
         // Remove When Testing In Live
-        //Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        //Auth.auth().settings?.isAppVerificationDisabledForTesting = true // Makes authentication a placeholder
         
         let phoneNumber = "+" + code + number
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (ID, err) in
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (ID, err) in // Verifies phone number
             
-            if err != nil{
+            if err != nil {
                 self.errorMsg = err!.localizedDescription
                 self.error.toggle()
                 self.isLoading = false
@@ -42,13 +42,13 @@ class LoginViewModel : ObservableObject{
             
             // Code Sent Successfully...
             
-            alertView(msg: "Enter Verification Code") { (Code) in
+            alertView(msg: "Enter Verification Code") { (Code) in // Prompts user for verification code
                 
                 let credential = PhoneAuthProvider.provider().credential(withVerificationID: ID!, verificationCode: Code)
                 
                 Auth.auth().signIn(with: credential) { (res, err) in
                     
-                    if err != nil{
+                    if err != nil {
                         self.errorMsg = err!.localizedDescription
                         self.error.toggle()
                         self.isLoading = false
@@ -61,14 +61,14 @@ class LoginViewModel : ObservableObject{
         }
     }
     
-    func checkUser(){
+    func checkUser() {
         
         let ref = Firestore.firestore()
         let uid = Auth.auth().currentUser!.uid
         
         ref.collection("Users").whereField("uid", isEqualTo: uid).getDocuments { (snap, err) in
             
-            if err != nil{
+            if err != nil {
                 // No Documents..
                 // No User Found...
                 self.registerUser.toggle()
@@ -76,7 +76,7 @@ class LoginViewModel : ObservableObject{
                 return
             }
             
-            if snap!.documents.isEmpty{
+            if snap!.documents.isEmpty {
                 
                 self.registerUser.toggle()
                 self.isLoading = false

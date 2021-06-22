@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostModel : Identifiable {
+struct PostModel : Identifiable { // Defines basic properties of a post
     
     var id: String
     var title : String

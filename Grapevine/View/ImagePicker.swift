@@ -8,7 +8,7 @@
 import SwiftUI
 import PhotosUI
 
-struct ImagePicker : UIViewControllerRepresentable {
+struct ImagePicker : UIViewControllerRepresentable { // Wraps system image selection interface for use in the app
     
     @Binding var picker : Bool
     @Binding var img_Data : Data

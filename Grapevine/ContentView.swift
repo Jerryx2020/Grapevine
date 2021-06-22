@@ -9,19 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("current_status") var status = false
-    //@State var notFirst: Bool = UserDefaults.standard.bool(forKey: "notfirst") //this makes it only show up on first run
-    @State var notFirst: Bool = false //comment this if the above line is uncommented
+    //@State var notFirst: Bool = UserDefaults.standard.bool(forKey: "notfirst") // This makes the `IntroductionView` appear only on first run; remove first set of comment marks and comment next line to enable this functionality
+    @State var notFirst: Bool = false // Comment this if the above line is uncommented
     var body: some View {
 
-        NavigationView{
+        NavigationView {
             
-            VStack{
+            VStack {
                 if !self.notFirst {
                     IntroductionView(notFirst: self.$notFirst)
                 } else {
-                    if status{Home()}
-                    else{Login()}
-                }
+                    if status {Home()} else {Login()}
+                } // Shows `IntroductionView` if first login and, if not, `Home` if logged in, else `Login`
             }
             .preferredColorScheme(.dark)
             .navigationBarHidden(true)

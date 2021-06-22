@@ -9,17 +9,17 @@ import SwiftUI
 import SDWebImageSwiftUI
 import MessageUI
 
-struct SettingsView: View {
+struct SettingsView: View { // Creates visual representation of `SettingsViewModel` and user's data
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
-    @StateObject var settingsData = SettingsViewModel()
-    @State var bug: Bool = false
+    @StateObject var settingsData = SettingsViewModel() // Defines underlying functionality
+    @State var bug: Bool = false // Defines whether the bug report message should be shown
     @State var alert: Bool = false
-    let canSent: Bool = MFMailComposeViewController.canSendMail()
+    let canSent: Bool = MFMailComposeViewController.canSendMail() // Contains whether the device being used has email capabilities for bug reporting
     var body: some View {
         ScrollView {
-            VStack{
+            VStack {
                 
-                HStack{
+                HStack {
                     
                     Text("Settings")
                         .font(Font.custom("ITC Avant Garde Gothic Bold", size: 18))
@@ -30,11 +30,12 @@ struct SettingsView: View {
                 }
                 .padding()
                 .padding(.top,edges!.top)
+
                 // Top Shadow Effect...
                 .background(Color("bg"))
                 .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
                 
-                if settingsData.userInfo.pic != ""{
+                if settingsData.userInfo.pic != "" {
                     
                     ZStack{
                         
@@ -56,7 +57,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                HStack(spacing: 15){
+                HStack(spacing: 15) {
                     
                     Text(settingsData.userInfo.username)
                         .font(.title)
@@ -74,7 +75,7 @@ struct SettingsView: View {
                 }
                 .padding()
                 
-                HStack(spacing: 15){
+                HStack(spacing: 15) {
                     
                     Text(settingsData.userInfo.bio)
                         .foregroundColor(.white)
@@ -92,7 +93,7 @@ struct SettingsView: View {
                 .padding()
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    ForEach(socials.allCases, id: \.id) { value in
+                    ForEach(socials.allCases, id: \.id) { value in // Shows each social media field
                         HStack(spacing: 15){
                             
                             Text(value.id.capitalized + ": " + self.settingsData.userInfo.get(value))
@@ -106,7 +107,7 @@ struct SettingsView: View {
                                 }
                             }) {
                                 
-                                Image(value.id)
+                                Image(value.id) // Shows each platform's logo as edit button
                                     .font(.system(size: 24))
                                     .foregroundColor(.white)
                                     .frame(width: 25, height: 25, alignment: .center)
@@ -115,7 +116,7 @@ struct SettingsView: View {
                     }
                 }
 
-                // LogOut Button...
+                // Log Out Button...
                 
                 Button(action: settingsData.logOut, label: {
                     Text("Logout")
@@ -150,16 +151,16 @@ struct SettingsView: View {
              
                 ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
             }
-            .sheet(isPresented: self.$bug) {
+            .sheet(isPresented: self.$bug) { // Shows bug report email page when button is pressed
                 Email()
             }
             .onChange(of: settingsData.img_data) { (newData) in
                 // whenever image is selected update image in Firebase...
                 settingsData.updateImage()
             }
-            .alert(isPresented: self.$alert, content: {
+            .alert(isPresented: self.$alert, content: { // Shows alert with alternate bug report method if the device is unable to send mail
                 
-                Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! To report a bug, use a device that has email capabilities. You can, however, use a Google form."), primaryButton: .destructive(Text("Ok")), secondaryButton: .default(Text("Report"), action: {
+                Alert(title: Text("Uh Oh!"), message: Text("This device cannot send mail! You can, however, contact us through a Google form."), primaryButton: .destructive(Text("Ok")), secondaryButton: .default(Text("Report"), action: {
                     UIApplication.shared.open(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfO7lFPs_tHoyn9trXOJLePeH-o1GoVE6VzTE10R2ol9NzxzQ/viewform?usp=sf_link")!)
                 }))
             })
@@ -167,15 +168,15 @@ struct SettingsView: View {
     }
 }
 
-struct Email: UIViewControllerRepresentable {
+struct Email: UIViewControllerRepresentable { // Wraps system email interface
     
     typealias UIViewControllerType = MFMailComposeViewController
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<Email>) -> MFMailComposeViewController {
         let compose: MFMailComposeViewController = MFMailComposeViewController()
-        compose.setToRecipients(["grapevinefbla@gmail.com"])
-        compose.setSubject("Bug Report")
-        compose.setMessageBody("Dear Grapevine Bug Team,", isHTML: false)
+        compose.setToRecipients(["grapevinefbla@gmail.com"])              // -\
+        compose.setSubject("Bug Report")                                  //   |--- fills in fields in bug report email form by default
+        compose.setMessageBody("Dear Grapevine Bug Team,", isHTML: false) // -/
         return compose
     }
 

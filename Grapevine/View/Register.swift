@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Register: View {
+struct Register: View { // Creates registration page when creating a new user
     
-    @StateObject var registerData = RegisterViewModel()
+    @StateObject var registerData = RegisterViewModel() // Contains underlying function of `Register`
     
     var body: some View {
-        VStack{
+        VStack {
             
-            HStack{
+            HStack {
                 
                 Text("Register")
                     .font(.largeTitle)
@@ -25,7 +25,7 @@ struct Register: View {
             }
             .padding()
             
-            ZStack{
+            ZStack {
                 
                 if registerData.image_Data.count == 0{
                     
@@ -35,8 +35,7 @@ struct Register: View {
                         .frame(width: 115, height: 115)
                         .background(Color.white)
                         .clipShape(Circle())
-                }
-                else{
+                } else {
                     
                     Image(uiImage: UIImage(data: registerData.image_Data)!)
                         .resizable()
@@ -51,7 +50,7 @@ struct Register: View {
                 registerData.picker.toggle()
             })
             
-            HStack(spacing: 15){
+            HStack(spacing: 15) {
                 
                 TextField("Name", text: $registerData.name)
                     .padding()
@@ -61,7 +60,7 @@ struct Register: View {
             }
             .padding()
             
-            HStack(spacing: 15){
+            HStack(spacing: 15) {
                 
                 TextField("Bio", text: $registerData.bio)
                     .padding()
@@ -72,12 +71,11 @@ struct Register: View {
             .padding(.horizontal)
             .padding(.bottom)
             
-            if registerData.isLoading{
+            if registerData.isLoading {
                 
                 ProgressView()
                     .padding()
-            }
-            else{
+            } else {
                 
                 Button(action: registerData.register, label: {
                     Text("Register")
@@ -88,8 +86,8 @@ struct Register: View {
                         .background(Color("blue"))
                         .clipShape(Capsule())
                 })
-                .disabled(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
-                .opacity(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1)
+                .disabled(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false) // Ensures that necessary fields contain data
+                .opacity(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1) // Creates visuall effect that echoes the above sentiment
             }
             
             Spacer(minLength: 0)
@@ -97,7 +95,7 @@ struct Register: View {
         .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         .sheet(isPresented: $registerData.picker, content: {
             ImagePicker(picker: $registerData.picker, img_Data: $registerData.image_Data)
-        })
+        }) // Presents image picker is an image is to be picked
         .preferredColorScheme(.dark)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-class NewPostModel : ObservableObject{
+class NewPostModel : ObservableObject { // Defines functionality needed to make a new post
     
     @Published var postTxt = ""
     // Image Picker...
@@ -20,23 +20,23 @@ class NewPostModel : ObservableObject{
     
     let uid = Auth.auth().currentUser!.uid
     
-    func post(updateId: String,present : Binding<PresentationMode>){
+    func post(updateId: String, present: Binding<PresentationMode>) {
         
         // posting Data...
         
         isPosting = true
         
-        if updateId != ""{
+        if updateId != "" {
             
             // Updating Data...
             
             ref.collection("Posts").document(updateId).updateData([
             
-                "title": postTxt
+                "title": postTxt // Updates text
             ]) { (err) in
                 
                 self.isPosting = false
-                if err != nil{return}
+                if err != nil { return }
                 
                 present.wrappedValue.dismiss()
             }
@@ -44,7 +44,7 @@ class NewPostModel : ObservableObject{
             return
         }
         
-        if img_Data.count == 0{
+        if img_Data.count == 0 {
             
             ref.collection("Posts").document().setData([
             
@@ -55,17 +55,16 @@ class NewPostModel : ObservableObject{
                 
             ]) { (err) in
                 
-                if err != nil{
+                if err != nil {
                     self.isPosting = false
                     return
                 }
                 
                 self.isPosting = false
-                // closing View When Succssfuly Posted...
+                // Closing View When Successfuly Posted...
                 present.wrappedValue.dismiss()
             }
-        }
-        else{
+        } else {
             
             UploadImage(imageData: img_Data, path: "post_Pics") { (url) in
                 
@@ -84,7 +83,7 @@ class NewPostModel : ObservableObject{
                     }
                     
                     self.isPosting = false
-                    // closing View When Succssfuly Posted...
+                    // closing View When Successfuly Posted...
                     present.wrappedValue.dismiss()
                 }
             }
