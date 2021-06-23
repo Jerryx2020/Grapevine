@@ -17,7 +17,7 @@ $ pod update
 ```
 Some functionality is not available in the iOS simulator provided by Xcode. To gain access to all features, please install the app to an iOS device by connecting it to your Mac and installing with Xcode.
 
-An entirely web-based implementation for cross-platform compatibility is available at https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a. This version can be installed simply and works on Android, iOS, macOS, and more!
+An entirely web-based implementation for cross-platform compatibility is available at https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a. Some functionality is not possible on the web, so the iOS app is preferred. This version can be installed simply and works on Android, iOS, macOS, and more!
 
 ## Usage
 Upon first launch, the user may take two routes: use an existing profile associated with a phone number or use a new phone number in the database. On the login screen, the first entry box accepts a country code, and the second, the remainder of the phone number. Pressing verify performs authentication and unlocks the app. The user may also enter a phone number that is not associated with a profile. This brings the user to the Register page.
