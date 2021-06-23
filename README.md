@@ -127,7 +127,7 @@ Grapevine
 - [x] **Navigation**: navigation is intuitive and described in README.md and the User Guide
 - [x] **Code**: code contains commentary and is arranged logically, as explained in Project Structure
 - [x] **Icon and Graphics**: graphics are consistent with logo color scheme, and logo is shown on device home screen
-- [x] **Social Media**: the app is connected to Google Firebase, makes use of a Social Media design, and integrates with other platforms
+- [x] **Social Media**: the app is connected to Google Firebase, makes use of a Social Media design, and integrates with other platforms as a gateway, and web version supports Google login
 - [x] **Bugs**: no bugs have been observed, and future bugs can be reported through GitHub and email in the app
 
 ## Licensing
