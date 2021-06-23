@@ -15,9 +15,9 @@ $ pod deintegrate
 $ pod install
 $ pod update
 ```
-Some functionality is not available in the iOS simulator provided by Xcode. To gain access to all features, please install the app to an iOS device by connecting it to your Mac and installing with Xcode.
+This app can be installed on any iOS device by connecting the device to a Mac running Xcode. Then, clone this repository, select the device in the run menu (at the top of the window next to the run button, reading iPhone X by default), then click run. This will make a temporary installation of the app on the device. Occassionally, it will ask for a "Developer Team." This will require one to log in with their Apple ID.
 
-An entirely web-based implementation for cross-platform compatibility is available at https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a. Some functionality is not possible on the web, so the iOS app is preferred. This version can be installed simply and works on Android, iOS, macOS, and more!
+Some functionality is not available in the iOS simulator provided by Xcode. To gain access to all features, please install the app to an iOS device by connecting it to your Mac and installing with Xcode.
 
 ## Usage
 Upon first launch, the user may take two routes: use an existing profile associated with a phone number or use a new phone number in the database. On the login screen, the first entry box accepts a country code, and the second, the remainder of the phone number. Pressing verify performs authentication and unlocks the app. The user may also enter a phone number that is not associated with a profile. This brings the user to the Register page.
@@ -120,7 +120,7 @@ Grapevine
 ## FBLA Guidelines
 - [x] **The app must be rated for all ages**
 - [x] **Packaged with complete file, README, and instructions**: contains README and User Guide with usage instructions as well as info page on startup
-- [x] **Application Functionality**: application can be launched on iPhone, and a [cross-platform version](https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a) is included 
+- [x] **Application Functionality**: application can be launched on iPhone, and an [entirely web-based, cross-platform version](https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a) is included 
 - [x] **Documentation and Copyright Compliance**: license information is included in the code, code structure, and README.md
 - [x] **Application addresses the topic/problem**: application is a Professional Social Media app
 - [x] **Planning Process**: planning is thoroughy described in presentation
@@ -129,6 +129,9 @@ Grapevine
 - [x] **Icon and Graphics**: graphics are consistent with logo color scheme, and logo is shown on device home screen
 - [x] **Social Media**: the app is connected to Google Firebase, makes use of a Social Media design, and integrates with other platforms as a gateway, and web version supports Google login
 - [x] **Bugs**: no bugs have been observed, and future bugs can be reported through GitHub and email in the app
+
+## Cross-Platform Version
+The cross-platform version does not have the same functionality as the iOS app in order to accomodate all operating systems. Therefore, the iOS app is preferred.
 
 ## Licensing
 All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
