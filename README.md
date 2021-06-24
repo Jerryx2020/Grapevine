@@ -131,7 +131,7 @@ Grapevine
 - [x] **Bugs**: no bugs have been observed, and future bugs can be reported through **GitHub** and email or **Google Form** in the app
 
 ## Cross-Platform Version
-The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. The cross-platform version was built with **Adalo**, and access to the source is available [here](https://app.adalo.com/accept-invite?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJpbnZpdGUiLCJlbWFpbCI6Im5pYnJvbnNvbkBibHVldmFsbGV5azEyLm5ldCIsImludml0YXRpb25JZCI6MjQwNDI0LCJpYXQiOjE2MjQ1NzQwMDcsImV4cCI6MTYyNTc4MzYwN30.B7WFXuIPtBE1Q2TMwq34RcQxLuo9AV4KLwXD_oWvg1Y) A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
+The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. The cross-platform version was built with **Adalo**, and access to the source is available in the User Guide. A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
 
 ## Licensing
 All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
