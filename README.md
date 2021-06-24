@@ -131,7 +131,9 @@ Grapevine
 - [x] **Bugs**: no bugs have been observed, and future bugs can be reported through **GitHub** and email or **Google Form** in the app
 
 ## Cross-Platform Version
-The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. The cross-platform version was built with **Adalo**, and access to the source is available in the User Guide. A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
+The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
+
+The cross-platform version was built with **Adalo**, and access to the source is available at Adalo's website with the credentials at the end of this file.
 
 ## Licensing
 All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
@@ -143,3 +145,9 @@ The two landscape pictures used were taken personally and the rights to the imag
 System symbols are licensed for free developer use by **Apple**.
 
 **BertQA** capabilities (located in the file system as BertQACore) are used under the ***Apache License Version 2.0***. Consistently with the terms of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
+
+## Test Credentials
+|Platform|Username|Password|Description|
+|---|---|---|---|
+|||||
+|||||
