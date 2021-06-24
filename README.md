@@ -2,11 +2,11 @@
 an app for sharing workplace experiences
 
 ## Installation with Xcode
-When installing on macOS to run in Xcode, one must install all dependencies with Cocoapods.
+When installing ***Grapevine*** on **macOS** to run in **Xcode**, one must install all dependencies with **Cocoapods**.
 
 First, navigate to the location of the project in the file system using `cd`.
 
-Then, if it is not already installed, install Cocoapods with `sudo gem install cocoapods`.
+Then, if it is not already installed, install **Cocoapods** with `sudo gem install cocoapods`.
 
 Finally, run the following (ommitting `$`):
 ```
@@ -15,24 +15,24 @@ $ pod deintegrate
 $ pod install
 $ pod update
 ```
-This app can be installed on any iOS device by connecting the device to a Mac running Xcode. Then, clone this repository, select the device in the run menu (at the top of the window next to the run button, reading iPhone X by default), then click run. This will make a temporary installation of the app on the device. Occassionally, it will ask for a "Developer Team." This will require one to log in with their Apple ID.
+This app can be installed on any **iOS** device by connecting the device to a **Mac** running **Xcode**. Then, clone this repository, select the device in the run menu (at the top of the window next to the run button, reading ***iPhone X*** by default), then click run. This will make a temporary installation of the app on the device. Occassionally, it will ask for a "Developer Team." This will require the installer to log in with their **Apple ID**.
 
-Some functionality is not available in the iOS simulator provided by Xcode. To gain access to all features, please install the app to an iOS device by connecting it to your Mac and installing with Xcode.
+Some functionality is not available in the **iOS** simulator provided by **Xcode**. To gain access to all features, please install the app to an **iOS** device by connecting it to your **Mac** and installing with **Xcode**.
 
 ## Usage
-Upon first launch, the user may take two routes: use an existing profile associated with a phone number or use a new phone number in the database. On the login screen, the first entry box accepts a country code, and the second, the remainder of the phone number. Pressing verify performs authentication and unlocks the app. The user may also enter a phone number that is not associated with a profile. This brings the user to the Register page.
+Upon first launch, the user may take two routes: use an existing profile associated with a phone number or use a new phone number in the database. On the *Login* screen, the first entry box accepts a country code, and the second, the remainder of the phone number. Pressing verify performs authentication and unlocks the app. The user may also enter a phone number that is not associated with a profile. This brings the user to the *Register* page.
 
-The main part of the app is the Feed. Scrolling will allow the user to view existing posts. Clicking the button at the top right will allow the user to post. The user can, then, enter text and select an image to post. After posting, a user may also delete or edit their post by clicking the three dots. Using the settings screen, the user may update their profile image, name, bio, and the user may also logout.
+The main part of the app is the *Feed*, containing all posts. Scrolling will allow the user to view existing posts. Clicking the button at the top right will allow the user to post. The user can, then, enter text and select an image to post. After posting, a user may also delete or edit their post by clicking the three dots. Using the *Settings* screen, the user may update their profile image, name, bio, and the user may also logout.
 
 ## Purpose
-We built Grapevine to make taking a new job more predictable. We try to do so by allowing people to share their experiences from the workplace. When taking a job, one should know what to expect, but, often, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. Grapevine gives people peace of mind by creating a more transparent workplace.
+We built ***Grapevine*** to make taking a new job more predictable. We try to do so by allowing people to share their experiences from the workplace. When taking a job, one should know what to expect, but, often, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. ***Grapevine*** gives people peace of mind by creating a more transparent workplace.
 
 ## Project Structure
-We designed Grapevine's file structure to be intuitive and elegant. In this design, as one goes deeper into the file structure, files become less abstract.
+We designed ***Grapevine's*** file structure to be intuitive and elegant. In this design, as one goes deeper into the file structure, files become less abstract.
 
-Like files are grouped together. Folders for data retrieval are located in the ViewModel folder; graphical aspects, View; database managers, Model; and artificial intelligence features, AI.
+Like files are grouped together. Folders for data retrieval are located in the *ViewModel* folder; graphical aspects, *View*; database managers, *Model*; and artificial intelligence features, *AI*.
 
-The app also makes use of 3rd party dependencies such as SDWebImage, Cocoapods, and the GoogleService-Info. These dependencies retrieve web images, manage AI and database libraries, and coordinate with our Firebase database, respectively.
+The app also makes use of 3rd party dependencies such as **SDWebImage**, **Cocoapods**, and the **GoogleService-Info**. These dependencies retrieve web images, manage AI and database libraries, and coordinate with our **Firebase** database, respectively.
 ```
 Grapevine
 │   Assets.xcassest                                    // This package contains a collection of assets for the project
@@ -120,26 +120,26 @@ Grapevine
 ## FBLA Guidelines
 - [x] **The app must be rated for all ages**
 - [x] **Packaged with complete file, README, and instructions**: contains README and User Guide with usage instructions as well as info page on startup
-- [x] **Application Functionality**: application can be launched on iPhone, and an [entirely web-based, cross-platform version](https://previewer.adalo.com/820463c0-8115-4dff-8c2a-b3ba06283b7a) is included 
+- [x] **Application Functionality**: application can be launched on **iPhone**, and an entirely web-based, cross-platform version is included in the User Guide
 - [x] **Documentation and Copyright Compliance**: license information is included in the code, code structure, and README.md
 - [x] **Application addresses the topic/problem**: application is a Professional Social Media app
 - [x] **Planning Process**: planning is thoroughy described in presentation
 - [x] **Navigation**: navigation is intuitive and described in README.md and the User Guide
 - [x] **Code**: code contains commentary and is arranged logically, as explained in Project Structure
 - [x] **Icon and Graphics**: graphics are consistent with logo color scheme, and logo is shown on device home screen
-- [x] **Social Media**: the app is connected to Google Firebase, makes use of a Social Media design, and integrates with other platforms as a gateway, and web version supports Google login
-- [x] **Bugs**: no bugs have been observed, and future bugs can be reported through GitHub and email in the app
+- [x] **Social Media**: the app is connected to **Google Firebase**, makes use of a Social Media design, and integrates with other platforms as a gateway, and web version supports **Google** login
+- [x] **Bugs**: no bugs have been observed, and future bugs can be reported through **GitHub** and email or **Google Form** in the app
 
 ## Cross-Platform Version
-The cross-platform version does not have the same functionality as the iOS app in order to accomodate all operating systems. Therefore, the iOS app is preferred.
+The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
 
 ## Licensing
 All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
 
-Profile images appearing in the application are used under the Creative Commons license and are not of real people.
+Profile images appearing in the application are used under the ***Creative Commons*** license and are not of real people.
 
 The two landscape pictures used were taken personally and the rights to the images are maintained.
 
-System symbols are licensed for free developer use by Apple.
+System symbols are licensed for free developer use by **Apple**.
 
-BertQA capabilities (located in the file system as BertQACore) are used under the Apache License Version 2.0. Consistently with the terms of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
+**BertQA** capabilities (located in the file system as BertQACore) are used under the ***Apache License Version 2.0***. Consistently with the terms of the license, a copy is included in the top level of the BertQACore folder, and all copyright headers in the used files are maintained.
