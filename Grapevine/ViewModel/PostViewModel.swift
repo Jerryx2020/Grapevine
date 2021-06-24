@@ -40,7 +40,7 @@ class PostViewModel : ObservableObject { // Defines underlying functionality of 
             docs.documentChanges.forEach { (doc) in
                 
                 // Checking If Doc Added...
-                if doc.type == .added, let q = doc.document.data()["title"] {
+                if doc.type == .added, let _ = doc.document.data()["title"] {
                     
                     // Retreving And Appending...
                     
@@ -72,7 +72,7 @@ class PostViewModel : ObservableObject { // Defines underlying functionality of 
                     }
                 }
                 
-                if doc.type == .modified {
+                if doc.type == .modified, let _ = doc.document.data()["title"] {
                     
                     // firebase is firing modifed when a new doc writed
                     // I dont know Why may be its bug...
