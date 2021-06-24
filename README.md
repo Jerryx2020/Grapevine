@@ -149,5 +149,5 @@ System symbols are licensed for free developer use by **Apple**.
 ## Test Credentials
 |Platform|Username|Password|Description|
 |---|---|---|---|
-|||||
+|**Adalo**|000grapevine000@gmail.com|@grapevine|A test account that allows code viewing on a copy of the cross-platform **Adalo** app|
 |||||
