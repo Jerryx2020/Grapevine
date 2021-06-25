@@ -135,7 +135,7 @@ Grapevine
 ## Cross-Platform Version
 The cross-platform version is structured similarly to **iOS** app, but not entirely the same in order to accomodate all operating systems. A separate User Guide for the cross-platform version is included, but the **iOS** app is, however, the preferred mode.
 
-The cross-platform version was built with **JavaScript**, and access to the app as a PWA is available through Adalo with the credentials at the end of this file.
+The cross-platform version was built primarily with **JavaScript**, and access to the app as a Progressive Web Application (PWA) is available through Adalo with the credentials at the end of this file.
 
 ## Licensing
 All 3rd party resources are used under perpetual or circumstantial licenses, and their conditions are all met.
@@ -158,5 +158,5 @@ System symbols are licensed for free developer use by **Apple**.
 |***Grapevine* iOS**|913-555-5555|654321|Log in to Nancy Jorgensen in ***Grapevine* iOS**|
 |***Grapevine* iOS**|913-666-6666|654321|Log in to Harrison Martinez in ***Grapevine* iOS**|
 |***Grapevine* iOS**|913-777-7777|654321|Log in to Anonymous in ***Grapevine* iOS**|
-|***Grapevine* Android**|grapevinefbla@gmail.com|#grapevine|Log in to Alicef in ***Grapevine* Android**|
-|***Grapevine* Android**|grapevinefbla2021@gmail.com|#grapevine|Log in to gordonb in ***Grapevine* Android**|
+|***Grapevine* PWA**|grapevinefbla@gmail.com|#grapevine|Log in to Alicef in ***Grapevine* PWA**|
+|***Grapevine* PWA**|grapevinefbla2021@gmail.com|#grapevine|Log in to gordonb in ***Grapevine* PWA**|
