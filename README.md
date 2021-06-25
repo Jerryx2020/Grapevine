@@ -122,7 +122,7 @@ Grapevine
 ## FBLA Guidelines
 - [x] **The app must be rated for all ages**
 - [x] **Packaged with complete file, README, and instructions**: contains README and User Guide with usage instructions as well as info page on startup
-- [x] **Application Functionality**: application can be launched on **iPhone**, and an entirely web-based, cross-platform version is included in the User Guide
+- [x] **Application Functionality**: application can be launched on **iPhone**, and an entirely web-based, cross-platform Porgressive Web Application is included in the Android User Guide
 - [x] **Documentation and Copyright Compliance**: license information is included in the code, code structure, and README.md
 - [x] **Application addresses the topic/problem**: application is a Professional Social Media app
 - [x] **Planning Process**: planning is thoroughy described in presentation
