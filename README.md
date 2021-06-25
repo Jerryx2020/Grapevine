@@ -32,7 +32,9 @@ We designed ***Grapevine's*** file structure to be intuitive and elegant. In thi
 
 Like files are grouped together. Folders for data retrieval are located in the *ViewModel* folder; graphical aspects, *View*; database managers, *Model*; and artificial intelligence features, *AI*.
 
-The app also makes use of 3rd party dependencies such as **SDWebImage**, **Cocoapods**, and the **GoogleService-Info**. These dependencies retrieve web images, manage AI and database libraries, and coordinate with our **Firebase** database, respectively.
+The app also makes use of 3rd party dependencies such as **SDWebImage**, **Cocoapods**, and the **GoogleService-Info**. These dependencies retrieve web images, manage AI and database libraries, and coordinate with our **Firebase** database, respectively. Their code is within the *Pods* folder in this repository.
+
+The top level of this repository includes an **Xcode** project, **Xcode** workspace, application test resources, ***Grapevine** Feedback & Planning Docs*, the ***Grapevine** User Guide*, the *Podfile* used to manage dependencies, and *README.md* (this document). The following structure is found within the *Grapevine* folder.
 ```
 Grapevine
 │   Assets.xcassest                                    // This package contains a collection of assets for the project
