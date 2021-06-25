@@ -158,4 +158,4 @@ System symbols are licensed for free developer use by **Apple**.
 |***Grapevine* iOS**|913-555-5555|654321|Log in to Nancy Jorgensen in ***Grapevine* iOS**|
 |***Grapevine* iOS**|913-666-6666|654321|Log in to Harrison Martinez in ***Grapevine* iOS**|
 |***Grapevine* iOS**|913-777-7777|654321|Log in to Anonymous in ***Grapevine* iOS**|
-|***Grapevine* JS**|grapevinefbla@gmail.com|#grapevine|Log in to Alicef in ***Grapevine* JS**|
+|***Grapevine* Cross-Platform**|grapevinefbla@gmail.com|#grapevine|Log in to Alicef in ***Grapevine* Cross-Platform**|
