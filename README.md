@@ -27,6 +27,10 @@ The main part of the app is the *Feed*, containing all posts. Scrolling will all
 ## Purpose
 We built ***Grapevine*** to make taking a new job more predictable. We try to do so by allowing people to share their experiences from the workplace. When taking a job, one should know what to expect, but, often, they aren’t able to gain any first-hand physical experience through shadowing or other types of interning in person. ***Grapevine*** gives people peace of mind by creating a more transparent workplace.
 
+#### Feedback Survey
+https://docs.google.com/forms/d/e/1FAIpQLSdJLhRNN8jg2AATkOSbKZJUVadHAAzOOtuE7dMUPWHRQe4s6w/viewform?usp=sf_link
+
+
 ## Project Structure
 We designed ***Grapevine's*** file structure to be intuitive and elegant. In this design, as one goes deeper into the file structure, files become less abstract.
 
