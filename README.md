@@ -123,7 +123,7 @@ Grapevine
     └───Preview Assets.xcassets                        // This file ontains global images used with previews, colors and the Logo.
 ```
 
-## FBLA Guidelines
+## National App Dev Competitive Guidelines
 - [x] **The app must be rated for all ages**
 - [x] **Packaged with complete file, README, and instructions**: contains README and User Guide with usage instructions as well as info page on startup
 - [x] **Application Functionality**: application can be launched on **iPhone**, and an entirely web-based, cross-platform Porgressive Web Application is included in the Android User Guide
